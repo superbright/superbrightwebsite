@@ -1,0 +1,69 @@
+	{% macro active(activePage='home') %}
+		<!-- Banner -->
+			<div id="main" class="container">
+				<!-- Header -->
+			<header id="header">
+				<div class="row">
+					<div class="3u 0u(medium)">
+						<a href="/" class="{%if activePage == 'home' %} active {% endif %}"><div class="logo"></div></a>
+					
+					</div>
+					<div class="4u -4u 0u(medium)">
+						<div id="rightnav">
+							<a href="portfolio" id="navsblg" class="{%if activePage == 'portfolio' %} active {% endif %}">Portfolio</a>
+							<a href="products" id="navsblg" class="{%if activePage == 'products' %} active {% endif %}">Products</a>
+							<a href="lab" id="navsblg">Lab</a>
+							<a href="contact" id="navsblg">Contact</a>
+							
+						</div>
+					</div>
+				</div>
+			</header>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<div class="logo"></div>
+			<!-- 	<hr class="major" /> -->
+				<ul class="links">
+					<li><a href="#top">Portfolio</a></li>
+					<li><a href="#content">Products</a></li>
+					<li><a href="#elements">Lab</a></li>
+					<li><a href="#grid">Contact</a></li>
+				</ul>
+				<hr class="major" />
+				<div class="row double">
+					<div class="12u 12u$(medium)">
+						
+						<p>195 Morgan Ave #406<br>Brooklyn Ny 11206<br>646 6969286<br>igal@superbright.me</p>
+						<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+										<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+						</ul>
+					</div>
+				
+				</div>
+		
+			</nav>
+
+				<div class="row">
+						<section class="6u 12u(medium) 12$(small)">
+						
+							<p>{{bannercopy}}</p>
+						</section>
+				
+						<section class="-3u 3u$ 3u$(large) -3u(large) 12u$(medium) 12u$(small) socialmediaicons" >
+							<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+										<!-- 	<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> -->
+							</ul>
+							
+						</section>
+					</div>
+			</div>
+{% endmacro %}

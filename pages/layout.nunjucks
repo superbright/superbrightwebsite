@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<!-- skel-baseline v3.0.0 | (c) n33 | skel.io | MIT licensed -->
+<html>
+	<head>
+		<title>Superbright</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src="http://fast.fonts.net/jsapi/f9fa3103-6a5f-47f1-a0eb-e4889ee7b693.js"></script>
+		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="/css/sb.css" />
+	</head>
+	<body id="top">
+
+  <!-- You write code for this content block in another file -->
+  {% block content %} {% endblock %}
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row double">
+						<div class="3u 12u$(medium)">
+							
+							<p>195 Morgan Ave #406<br>Brooklyn Ny 11206<br>646 6969286<br>igal@superbright.me</p>
+							<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+											<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+							</ul>
+						</div>
+						<div class="1u -8u 12u$(medium)">
+						Back to top 
+						</div>
+					</div>
+				</div>
+				
+			</footer>
+
+		<!-- Scripts -->
+
+			<script src="/js/skel.min.js"></script>
+			<script src="/js/main.js"></script>
+
+	</body>
+</html>

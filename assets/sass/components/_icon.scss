@@ -1,0 +1,18 @@
+// skel-baseline v3.0.0 | (c) n33 | skel.io | MIT licensed
+
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
+/* Icon */
+
+	.icon {
+		@include icon;
+		border-bottom: none;
+		position: relative;
+		color:_palette(icons);;
+
+		> .label {
+			display: none;
+		}
+	}

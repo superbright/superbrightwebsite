@@ -1,0 +1,57 @@
+{% extends "layout.nunjucks" %}
+
+
+{% block content %} 
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/banner.nunjucks' as nav %}
+{{nav.active('portfolio')}}
+
+		<!-- Main -->
+		<div id="main" class="container">
+
+			<div class="row">
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+			</div>					
+
+				<!-- Intro -->
+			<hr class="major" />
+					
+			<div class="row">
+				
+				<section class="3u 4u(medium) 12u$(small)">
+					<h3>Sed Feugiat</h3>
+					<ul class="actions small">
+							<li><a href="#" class="button small buttoninlinetag">Small</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Ssdmall</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
+							<li><a href="#" class="button small buttoninlinetag">Small</a></li>
+				</ul>
+				</section>
+				<section class="6u 7u$(medium) 12u$(small)">
+					<p>Erat ac non lorem justo amet primis dolor adipiscing lacinia accumsan felis sed dolor interdum ut. Amet accumsan magna etiam orci faucibus interdum et lorem ipsum et nullam.</p>
+					
+				</section>
+				<section class="3u 6u$(medium) 12u$(small)">
+					<p>Share on Facebook<br>
+					Post on Twitter</p>
+					
+				</section>
+				
+			</div>
+				<div class="row">
+					<div class="12u 12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+			</div>	
+			<div class="row">
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+			</div>	
+			<div class="row">
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+			</div>	
+
+		</div>
+
+
+{% endblock %}

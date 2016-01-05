@@ -1,0 +1,36 @@
+{
+  "name": "superbright",
+  "version": "0.1.0",
+  "description": "superbright website",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-data": "^1.2.1",
+    "gulp-nunjucks-render": "^1.0.0",
+    "nunjucks": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/superbright/website.git"
+  },
+  "keywords": [
+    "superbright",
+    "website",
+    "studio",
+    "brooklyn",
+    "technology",
+    "art",
+    "design"
+  ],
+  "author": "igal nassima <inassima@gmail.com> (igal.is)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/superbright/website/issues"
+  },
+  "homepage": "https://github.com/superbright/website#readme"
+}

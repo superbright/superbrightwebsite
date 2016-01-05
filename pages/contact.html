@@ -1,0 +1,91 @@
+{% extends "layout.nunjucks" %}
+
+
+{% block content %} 
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/banner.nunjucks' as nav %}
+{{nav.active('portfolio')}}
+
+		<!-- Main -->
+		<div id="main" class="container">
+
+			<div class="row">
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+			</div>					
+
+			<!-- Intro -->
+			<div class="row">
+				
+				<div class="4u 4u(large) 12u$(small)">
+					<hr class="major" />
+						<div class="row">
+							<div class="12u 12u$(large) 12u$(small)">
+								<h3>CONTACT</h3>
+								<p>195 Morgan Ave #406 Brooklyn Ny 11206<br>646 6969286<br>igal@superbright.me</p>
+								<ul class="icons">
+												<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+												<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<hr class="major" />
+						<div class="row">
+							<div class="12u 12u$(large) 12u$(small)">
+								<h3>CAPABILITIES</h3>
+								<p>Advertising, Art Direction, Branding & Identity, Brand Strategy, Concept Development, Copywriting, Environmental Design, Exhibition Design, Experiential Design, Film Direction, Furniture Design, Interactive, Print, Packaging Design, Signage</p>
+								<p>Download capabilities pdf</p>
+							</div>
+						</div>
+						<hr class="major" />
+						<div class="row">
+							<div class="12u 12u$(large) 12u$(small)">
+								<h3>Clients</h3>
+									<ul>
+										<li>Google</li>
+										<li>Havas</li>
+										<li>Madwell</li>
+									</ul>
+							</div>
+						</div>
+						<hr class="major" />
+				</div>
+				<div class="8u 8u(large) 12u$(small)">
+					<hr class="major" />
+					<div class="row homerollover">
+							<section class="6u 12u$(medium)">
+								<div class="box alt">
+											<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
+										
+									</div>
+							</section>
+							<section class="6u$ 6u$(medium) 12u$(small)">
+								<h3>Igal Nassima</h3>
+								<p>Founder<br>
+								<p>Erat ac non lorem justo amet primis dolor adipiscing lacinia accumsan felis sed dolor interdum ut. Amet accumsan magna etiam orci faucibus interdum et lorem ipsum et nullam.</p>
+							</section>
+					</div>
+					<hr class="major" />
+					<div class="row homerollover">
+							<section class="6u 12u$(medium)">
+								<div class="box alt">
+											<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
+										
+									</div>
+							</section>
+							<section class="6u$ 6u$(medium) 12u$(small)">
+								<h3>Igal Nassima</h3>
+								<p>Founder<br>
+								<p>Erat ac non lorem justo amet primis dolor adipiscing lacinia accumsan felis sed dolor interdum ut. Amet accumsan magna etiam orci faucibus interdum et lorem ipsum et nullam.</p>
+							</section>
+					</div>
+					<hr class="major" />
+				</div>
+
+			</div> 
+		</div>
+
+
+{% endblock %}

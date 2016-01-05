@@ -1,0 +1,41 @@
+
+.homerollover {
+
+	
+			& {
+				img {
+					background-color: lighten(_palette(accent2, bg), 5);
+					opacity: 0.7;
+				}
+			}
+			&:hover {
+
+				img {
+					background-color: lighten(_palette(accent2, bg), 5);
+					opacity: 1.0;
+				}
+			}
+
+			&:active {
+				background-color: darken(_palette(accent2, bg), 5);
+				opacity: 0.4;
+			}
+		
+
+
+	
+}
+
+.secondrowimage {
+
+	@include breakpoint(large) {
+			
+				visibility: hidden;
+		
+		}
+}
+
+.socialmediaicons {
+
+	text-align: right;
+}

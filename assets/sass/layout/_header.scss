@@ -31,6 +31,15 @@
 				&:hover {
 					color: _palette(accent2, bg);
 				}
+
+				&[href="#nav"] {
+				@include icon('\f0c9');
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+					// &:before {
+					// 	margin: 0 0.5em 0 0;
+					// }
+				}
 			}
 		}
 
@@ -82,15 +91,15 @@
 				@include icon('\f0c9');
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 
-				&:before {
-					margin: 0 0.5em 0 0;
-				}
+				// &:before {
+				// 	margin: 0 0.5em 0 0;
+				// }
 			}
 
 			& + a[href="#nav"]:last-child {
-				border-left: solid 1px _palette(accent2, border);
-				padding-left: 1.25em;
-				margin-left: 0.5em;
+				// border-left: solid 1px _palette(accent2, border);
+				// padding-left: 1.25em;
+				// margin-left: 0.5em;
 			}
 
 			&:last-child {
@@ -131,6 +140,13 @@
 				visibility: hidden;
 			}
 
+			#rightnav {
+				text-align: right;
+				a {
+					padding-left:0px;
+				}
+			}
+
 			> h1 {
 				left: 1em;
 
@@ -144,5 +160,30 @@
 	@include breakpoint(xsmall) {
 		#header {
 			min-width: 320px;
+			height: 44px;
+			line-height: 44px;
+			
+			#navsb {
+				visibility: visible;
+				display: inline;
+			}
+			#navsblg {
+				visibility: hidden;
+			}
+
+			#rightnav {
+				text-align: right;
+				a {
+					padding-left:0px;
+				}
+			}
+
+			> h1 {
+				left: 1em;
+
+				a {
+					font-size: 1em;
+				}
+			}
 		}
 	}

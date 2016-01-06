@@ -4,7 +4,7 @@
 {% block content %} 
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
-{{nav.active('portfolio')}}
+{{nav.active('portfolio',bannercopy)}}
 
 		<!-- Main -->
 			<div id="main" class="container">
@@ -26,14 +26,11 @@
 						<section class="3u$ 6u$(medium) 12u$(small)">
 							<h3>{{project.title}}</h3>
 							<ul class="actions small">
-									<li><a href="#" class="button small buttoninlinetag">Small</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Ssdmall</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Small</a></li>
+									{% for tag in project.tags %}
+									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
+									{% endfor %}
 								</ul>
-							<p>Erat ac non lorem justo amet primis dolor adipiscing lacinia accumsan felis sed dolor interdum ut. Amet accumsan magna etiam orci faucibus interdum et lorem ipsum et nullam.</p>
-
+							<p>{{project.descriptionshort}}</p>
 							<p>Read more -></p>
 						</section>
 					</div>

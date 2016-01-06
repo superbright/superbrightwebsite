@@ -1,20 +1,19 @@
-	{% macro active(activePage='home') %}
+	{% macro active(activePage='home',bannercopy='hello',tags=[],selectedtag='') %}
 		<!-- Banner -->
 			<div id="main" class="container">
 				<!-- Header -->
 			<header id="header">
 				<div class="row">
 					<div class="3u 0u(medium)">
-						<a href="/" class="{%if activePage == 'home' %} active {% endif %}"><div class="logo"></div></a>
-					
+						<a href="/" class="{%if activePage == 'home' %} active {% endif %}"><div class="logo"></div></a>	
 					</div>
-					<div class="4u -4u 0u(medium)">
+					<div class="4u -4u 5u(medium) -4u(medium) 9u(small) ">
 						<div id="rightnav">
-							<a href="portfolio" id="navsblg" class="{%if activePage == 'portfolio' %} active {% endif %}">Portfolio</a>
-							<a href="products" id="navsblg" class="{%if activePage == 'products' %} active {% endif %}">Products</a>
-							<a href="lab" id="navsblg">Lab</a>
-							<a href="contact" id="navsblg">Contact</a>
-							
+							<a href="/portfolio" id="navsblg" class="{%if activePage == 'portfolio' %} active {% endif %}">Portfolio</a>
+							<a href="/products" id="navsblg" class="{%if activePage == 'products' %} active {% endif %}">Products</a>
+							<a href="/lab" id="navsblg">Lab</a>
+							<a href="/contact" id="navsblg">Contact</a>
+							<a href="#nav" id="navsb"></a>
 						</div>
 					</div>
 				</div>
@@ -23,7 +22,7 @@
 		<!-- Nav -->
 			<nav id="nav">
 				<div class="logo"></div>
-			<!-- 	<hr class="major" /> -->
+				<hr class="major" />
 				<ul class="links">
 					<li><a href="#top">Portfolio</a></li>
 					<li><a href="#content">Products</a></li>
@@ -43,9 +42,7 @@
 										<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
 						</ul>
 					</div>
-				
 				</div>
-		
 			</nav>
 
 				<div class="row">
@@ -60,8 +57,20 @@
 											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 											<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-										<!-- 	<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> -->
+									
 							</ul>
+
+							{%if activePage == 'tags' %}
+							<div class="select-wrapper">
+								
+										<select name="tag" id="tag">
+											{% for tag in tags %}
+												<option value="{{tag.id}}" {%if selectedtag.id == tag.id %} selected {% endif %}> {{tag.name}} </option>
+											{% endfor %}
+										</select>
+								
+							</div>
+							{% endif %}
 							
 						</section>
 					</div>

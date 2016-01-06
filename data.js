@@ -1,6 +1,7 @@
-var data = {
-	
-	'projects' : 
+
+module.exports = {
+  
+	projects :  
 				[
 					{
 						'title' : 'project 1',
@@ -13,8 +14,8 @@ var data = {
 						'images' : [
 							'image1.jpg','image2.jpg'
 						],
-						'tags' : [
-							'augmented reality', 'exhibit design'
+						'tagids' : [
+							10000, 10001
 						]
 					},
 					{
@@ -28,8 +29,8 @@ var data = {
 						'images' : [
 							'image1.jpg','image2.jpg'
 						],
-						'tags' : [
-							'virtual reality', 'exhibit design'
+						'tagids' : [
+							10000
 						]
 					},
 					{
@@ -43,11 +44,62 @@ var data = {
 						'images' : [
 							'image1.jpg','image2.jpg'
 						],
-						'tags' : [
-							'virtual reality', 'exhibit design'
+						'tagids' : [
+							10002
 						]
 					}
-				]
+				],
+
+	tags : [
+			{
+				"name" : "tag1",
+				"id" : 10000,
+				"description" : "omg this tag rules"
+			},
+			{
+				"name" : "tag2",
+				"id" : 10001,
+				"description" : "omg this tag rules"
+			},
+			{
+				"name" : "tag3",
+				"id" : 10002,
+				"description" : "omg this tag rules"
+			}
+	],
+
+	getTagfromID: function(id) {
+		var foundtag = "none";
+		this.tags.forEach(function(tag) {
+			if(tag.id === id) {
+				foundtag = tag;
+			}
+		});
+
+		return foundtag;
+	},
+	getTagfromTagname: function(name) {
+		var foundtag = "none";
+		this.tags.forEach(function(tag) {
+			if(tag.name === name) {
+				foundtag = tag;
+			}
+		});
+
+		return foundtag;
+	},
+	getProjectfromTagID: function(id) {
+		var foundprojects = [];
+		this.projects.forEach(function(project) {
+			if(project.tagids.indexOf(id) >= 0) {
+				foundprojects.push(project);
+			}
+		});
+
+		return foundprojects;
+	}
+
 };
 
-module.exports = data;
+
+

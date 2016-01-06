@@ -1,0 +1,26 @@
+{% extends "layout.nunjucks" %}
+
+
+{% block content %} 
+
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/banner.nunjucks' as nav %}
+{{nav.active('tags',bannercopy,tags,selectedtag)}}
+		<!-- Main -->
+			<div id="main" class="container">
+
+				{% for project in projects %}
+				<hr class="major" />
+					<div class="row homerollover">
+						<section class="6u 6u(medium) 12u$(small)">
+							<h3>{{project.title}}</h3>
+							<p>Sections</p>
+						</section>
+						<section class="6u$ 6u$(medium) 12u$(small)">
+							
+							<p>{{project.description}}</p>
+						</section>
+					</div>
+				{% endfor %}
+			</div>
+{% endblock %}

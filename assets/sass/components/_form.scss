@@ -25,10 +25,10 @@
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		background: _palette(border-bg);
+		background:  _palette(accent2, bg);
 		border-radius: _size(border-radius);
 		border: none;
-		border: solid _size(border-width) _palette(border);
+		// border: solid _size(border-width) _palette(border);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -62,6 +62,8 @@
 			text-align: center;
 			top: 0;
 			width: _size(element-height);
+			border:none;
+			background-color: _palette(accent2, bg);
 		}
 
 		select::-ms-expand {

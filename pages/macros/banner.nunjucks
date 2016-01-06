@@ -24,10 +24,10 @@
 				<div class="logo"></div>
 				<hr class="major" />
 				<ul class="links">
-					<li><a href="#top">Portfolio</a></li>
-					<li><a href="#content">Products</a></li>
-					<li><a href="#elements">Lab</a></li>
-					<li><a href="#grid">Contact</a></li>
+					<li><a href="/portfolio">Portfolio</a></li>
+					<li><a href="/products">Products</a></li>
+					<li><a href="/lab">Lab</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
 				<hr class="major" />
 				<div class="row double">

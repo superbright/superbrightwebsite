@@ -91,6 +91,13 @@ app.get('/portfolio/:id', function(req, res) {
   });
 });
 
+app.get('/products', function(req, res) {
+  res.render('products.html', {
+    projects : data.projects,
+    bannercopy : 'Hello Products',
+  });
+});
+
 app.get('/lab', function(req, res) {
   res.render('lab.html', {
     bannercopy : 'Hello Lab',

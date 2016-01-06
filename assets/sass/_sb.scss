@@ -29,7 +29,16 @@
 .secondrowimage {
 
 	@include breakpoint(large) {
-			
+				visibility: hidden;
+		
+		}
+
+	@include breakpoint(medium) {
+				visibility: hidden;
+		
+		}
+
+	@include breakpoint(small) {
 				visibility: hidden;
 		
 		}

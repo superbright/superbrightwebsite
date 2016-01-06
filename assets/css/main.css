@@ -2165,6 +2165,12 @@ body {
 @media screen and (max-width: 1280px) {
   .secondrowimage {
     visibility: hidden; } }
+@media screen and (max-width: 980px) {
+  .secondrowimage {
+    visibility: hidden; } }
+@media screen and (max-width: 736px) {
+  .secondrowimage {
+    visibility: hidden; } }
 
 .socialmediaicons {
   text-align: right; }

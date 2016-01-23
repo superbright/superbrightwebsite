@@ -109,7 +109,7 @@ app.get('/', function(req, res) {
   res.render('home.html', {
     bannercopy : 'Hello Superbright',
     title : 'Superbright',
-    projects: data.products.concat(data.projects)
+    projects: data.lab.concat(data.products).concat(data.projects)
   });
 });
 

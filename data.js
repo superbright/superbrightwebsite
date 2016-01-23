@@ -39,6 +39,7 @@ module.exports = {
 			{
 					'title' : 'Building a conductive ink touchpad',
 					'slug' : 'conductiveinktouchpad',
+					'type' : 'lab',
 					'description' : 'What if a wall was a controler? What if designs of wallpaper would be actual touchpads? We could simply touch a wall to turn on lights, to control screens, or any other connected devices. We decided to test this idea and create a paper touchpad that would control inputs on a screen.',
 					'descriptionshort' : 'What if a wall was a controler? What if designs of wallpaper would be actual touchpads? We could simply touch a wall to turn on lights, to control screens, or any other connected devices. We decided to test this idea and create a paper touchpad that would control inputs on a screen.',
 					'header' : {
@@ -47,10 +48,10 @@ module.exports = {
 					},
 					'author' : 'Susan NGO',
 					'images' : [
-						'etextilespart_1_001.JPG'
+						'etextilespart_1_001.JPG','etextilespart_1_002.JPG'
 					],
 					'tagids' : [
-						10000, 10001
+						10005, 10006
 					],
 					'date_created' : '10/12/2015',
 					'date_updated' : '10/18/2015',
@@ -87,6 +88,7 @@ module.exports = {
 				{
 						'title' : 'Alright Satellite',
 						'slug' : 'elementaryparticles',
+						'type' : 'products',
 						'description' : 'Alright Satellite Project Description',
 						'descriptionshort' : 'Alright Satellite Project Description Short',
 						'header' : {
@@ -108,6 +110,7 @@ module.exports = {
 					{
 						'title' : 'Rise Nation',
 						'slug' : 'risenation',
+						'type' : 'portfolio',
 						'description' : 'Rise Nation Project Description',
 						'descriptionshort' : 'Rise Nation Project Description Short',
 						'header' : {
@@ -124,6 +127,7 @@ module.exports = {
 					{
 						'title' : 'SXSW Teleporter',
 						'slug' : 'sxswatntteleporter',
+						'type' : 'portfolio',
 						'description' : 'SXSW Teleporter Description',
 						'descriptionshort' : 'SXSW Teleporter Description Short',
 						'header' : {
@@ -140,6 +144,7 @@ module.exports = {
 					{
 						'title' : 'AR Exhibit Design, Botanical Gardens Bronx',
 						'slug' : 'nybg',
+						'type' : 'portfolio',
 						'description' : 'Botanical Gardens Bronx Ar Exhibit Project Description',
 						'descriptionshort' : 'Botanical Gardens Bronx Ar Exhibit Project Description',
 						'header' : {
@@ -180,6 +185,16 @@ module.exports = {
 				"name" : "Mixed Reality",
 				"id" : 10004,
 				"description" : "Mixed Reality description"
+			},
+			{
+				"name" : "Research",
+				"id" : 10005,
+				"description" : "Research description"
+			},
+			{
+				"name" : "E-textile",
+				"id" : 10006,
+				"description" : "E-textile description"
 			}
 	],
 

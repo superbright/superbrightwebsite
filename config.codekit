@@ -40,39 +40,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/images\/lab\/conductiveinktouchpad\/conductive_ink_drawing_pad.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 631862,
-		"inputAbbreviatedPath": "\/assets\/images\/lab\/conductiveinktouchpad\/conductive_ink_drawing_pad.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/lab\/conductiveinktouchpad\/conductive_ink_drawing_pad.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/lab\/conductiveinktouchpad\/etextilespart_1_001.JPG": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1.30124e+06,
-		"inputAbbreviatedPath": "\/assets\/images\/lab\/conductiveinktouchpad\/etextilespart_1_001.JPG",
-		"outputAbbreviatedPath": "\/assets\/images\/lab\/conductiveinktouchpad\/etextilespart_1_001.JPG",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/lab\/conductiveinktouchpad\/etextilespart_1_002.JPG": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1.30626e+06,
-		"inputAbbreviatedPath": "\/assets\/images\/lab\/conductiveinktouchpad\/etextilespart_1_002.JPG",
-		"outputAbbreviatedPath": "\/assets\/images\/lab\/conductiveinktouchpad\/etextilespart_1_002.JPG",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/assets\/images\/pic01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -157,6 +124,39 @@
 		"initialSize": 229852,
 		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_006.jpg",
 		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_006.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/conductiveinktouchpad\/conductive_ink_drawing_pad.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 631862,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/conductive_ink_drawing_pad.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/conductive_ink_drawing_pad.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_001.JPG": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.30124e+06,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_001.JPG",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_001.JPG",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_002.JPG": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.30626e+06,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_002.JPG",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_002.JPG",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

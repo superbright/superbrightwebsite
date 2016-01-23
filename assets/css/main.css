@@ -2101,6 +2101,9 @@ body {
     #main {
       padding: 3em 0 1em 0; } }
 
+p a {
+  color: #444; }
+
 /* Footer */
 #footer {
   padding: 2em 0 0.1em 0; }

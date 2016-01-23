@@ -2,6 +2,7 @@ var nunjucks  = require('nunjucks');
 var express   = require('express');
 var bodyParser = require('body-parser')
 var app       = express();
+var basicAuth = require('basic-auth');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -33,9 +34,44 @@ for(var i =0; i < data.projects.length; i++) {
    data.projects[i].tags = tags;
 }
 
+for(var i =0; i < data.lab.length; i++) {
+  
+  var tagids = data.lab[i].tagids;
+  var tags = [];
+  tagids.forEach(function(tagid) {
+     var tag = data.getTagfromID(tagid);
+     tags.push(tag);
+  });
+   data.lab[i].tags = tags;
+}
+
+for(var i =0; i < data.products.length; i++) {
+  
+  var tagids = data.products[i].tagids;
+  var tags = [];
+  tagids.forEach(function(tagid) {
+     var tag = data.getTagfromID(tagid);
+     tags.push(tag);
+  });
+   data.products[i].tags = tags;
+}
+
 
 
 app.use(express.static('assets'));
+
+// Authenticator
+app.use(function(req, res, next) {
+    var user = basicAuth(req);
+
+    if (user === undefined || user['name'] !== 'superbright' || user['pass'] !== 'partytime') {
+        res.statusCode = 401;
+        res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
+        res.end('Unauthorized');
+    } else {
+        next();
+    }
+});
 
 nunjucks.configure(['/pages','pages'], {
   autoescape: true,
@@ -45,9 +81,14 @@ nunjucks.configure(['/pages','pages'], {
 
 app.get('/tags/:tag', function(req, res) {
   var tag = data.getTagfromTagname(req.params.tag);
+
+  var projects = data.getProjectfromTagID(tag.id);
+  var products = data.getProductfromTagID(tag.id);
+  var labitems = data.getLabfromTagID(tag.id);
+  
   res.render('tags.html', {
     bannercopy : tag.description,
-    projects : data.getProjectfromTagID(tag.id),
+    projects : projects.concat(labitems).concat(products),
     selectedtag: tag,
     tags: data.tags
   });
@@ -67,7 +108,8 @@ app.post('/tags', function(req, res) {
 app.get('/', function(req, res) {
   res.render('home.html', {
     bannercopy : 'Hello Superbright',
-    title : 'Superbright'
+    title : 'Superbright',
+    projects: data.products.concat(data.projects)
   });
 });
 
@@ -79,21 +121,44 @@ app.get('/portfolio', function(req, res) {
 });
 
 app.get('/portfolio/:id', function(req, res) {
+
+  var foundproject = {};
+
+  for(var i =0; i < data.projects.length; i++) {  
+    if(data.projects[i].slug === req.params.id) {
+        foundproject = data.projects[i];
+        break;
+    }
+  }
+
   res.render('portfoliodetail.html', {
     title : 'Superbright',
     bannercopy : 'Hello Project',
-    items : [
-      { name : 'item #1' },
-      { name : 'item #2' },
-      { name : 'item #3' },
-      { name : 'item #4' },
-    ]
+    project : foundproject
+  });
+});
+
+app.get('/products/:id', function(req, res) {
+
+  var foundproduct = {};
+
+  for(var i =0; i < data.products.length; i++) {  
+    if(data.products[i].slug === req.params.id) {
+        foundproduct = data.products[i];
+        break;
+    }
+  }
+
+  res.render('productdetail.html', {
+    title : 'Superbright',
+    bannercopy : 'Hello product',
+    project : foundproduct
   });
 });
 
 app.get('/products', function(req, res) {
   res.render('products.html', {
-    projects : data.projects,
+    projects : data.products,
     bannercopy : 'Hello Products',
   });
 });
@@ -102,12 +167,25 @@ app.get('/lab', function(req, res) {
   res.render('lab.html', {
     bannercopy : 'Hello Lab',
     title : 'Superbright',
-    items : [
-      { name : 'item #1' },
-      { name : 'item #2' },
-      { name : 'item #3' },
-      { name : 'item #4' },
-    ]
+    projects : data.lab
+  });
+});
+
+app.get('/lab/:id', function(req, res) {
+
+  var foundproject = {};
+
+  for(var i =0; i < data.lab.length; i++) {  
+    if(data.lab[i].slug === req.params.id) {
+        foundproject = data.lab[i];
+        break;
+    }
+  }
+
+  res.render('labdetail.html', {
+    bannercopy : 'Hello Lab',
+    title : 'Superbright',
+    project : foundproject
   });
 });
 
@@ -116,11 +194,6 @@ app.get('/contact', function(req, res) {
   res.render('contact.html', {
     bannercopy : 'Hello Contact',
     title : 'Superbright',
-    items : [
-      { name : 'item #1' },
-      { name : 'item #2' },
-      { name : 'item #3' },
-      { name : 'item #4' },
-    ]
+    data : data.contact
   });
 });

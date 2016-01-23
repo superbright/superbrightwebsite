@@ -9,62 +9,33 @@
 		<!-- Main -->
 			<div id="main" class="container">
 
+			{% for project in projects %}
 				<hr class="major" />
 					<div class="row homerollover">
 						<section class="3u 12u(medium) 12u$(small)">
-								<h3>Sed Feugiat</h3>
-								<p>Posted by Susan Ngo<br>10/07/2016</p>
+								<h3>{{project.title}}</h3>
+								<p>Posted by {{project.author}}<br>{{project.date_created}}</p>
 						</section>
 						<section class="3u 12u(medium) 12u$(small)">
 						
 							<ul class="actions small">
-									<li><a href="#" class="button small buttoninlinetag">Small</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Ssdmall</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Small</a></li>
+									{% for tag in project.tags %}
+									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
+									{% endfor %}
 								</ul>
-							<p>Erat ac non lorem justo amet primis dolor adipiscing lacinia accumsan felis sed dolor interdum ut. Amet accumsan magna etiam orci faucibus interdum et lorem ipsum et nullam.</p>
-
-							<p>Read more -></p>
+							<p>{{project.descriptionshort}}</p>
+							<p><a href="/lab/{{project.slug}}"> Read more -> </a></p>
 						</section>
 						<section class="6u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/lab/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
 									</div>
 								</div>
 						</section>
 					</div>
 
-					<hr class="major" />
-					<div class="row homerollover">
-						<section class="3u 12u(medium) 12u$(small)">
-								<h3>Sed Feugiat</h3>
-								<p>Posted by Susan Ngo<br>10/07/2016</p>
-						</section>
-						<section class="3u 12u(medium) 12u$(small)">
-						
-							<ul class="actions small">
-									<li><a href="#" class="button small buttoninlinetag">Small</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Ssdmall</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-									<li><a href="#" class="button small buttoninlinetag">Small</a></li>
-								</ul>
-							<p>Erat ac non lorem justo amet primis dolor adipiscing lacinia accumsan felis sed dolor interdum ut. Amet accumsan magna etiam orci faucibus interdum et lorem ipsum et nullam.</p>
-
-							<p>Read more -></p>
-						</section>
-						<section class="6u 12u$(medium)">
-							<div class="box alt">
-									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
-									</div>
-								</div>
-						</section>
-					</div>
-
+			{% endfor %}
 					
 
 					</div>

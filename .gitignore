@@ -35,3 +35,11 @@ node_modules
 Status API Training Shop Blog About Pricing
 
 .codekit-cache
+
+# Sass Cache
+*/.sass-cache
+*/.sass-cache/*
+**.sass-cache**
+*.sass-cache/
+*.css.map
+.sass-cache/

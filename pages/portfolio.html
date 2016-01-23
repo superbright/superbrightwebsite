@@ -18,7 +18,7 @@
 						<section class="9u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/pic01.jpg" alt="" /></span></div>
+										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
 									</div>
 								</div>
 						</section>
@@ -31,7 +31,7 @@
 									{% endfor %}
 								</ul>
 							<p>{{project.descriptionshort}}</p>
-							<p>Read more -></p>
+							<p><a href="/portfolio/{{project.slug}}"> Read more -> </a></p>
 						</section>
 					</div>
 

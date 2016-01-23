@@ -1,0 +1,89 @@
+{% extends "layout.nunjucks" %}
+
+
+{% block content %} 
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/banner.nunjucks' as nav %}
+{{nav.active('portfolio',bannercopy)}}
+
+  <style scoped>video {
+  width: 100%    !important;
+  height: auto   !important;
+   figure { display: block; background: #eee; padding: 10px; }
+}</style>
+		<!-- Main -->
+		<div id="main" class="container">
+
+					<!-- Intro -->
+			<hr class="major" />
+					
+			<div class="row">
+				<section class="3u 3u(medium) 12u$(small)">
+					<h3>{{project.title}}</h3>
+				</section>
+
+				<section class="3u 3u(medium) 12u$(small)">
+					<ul class="actions small">
+								{% for tag in project.tags %}
+									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
+									{% endfor %}
+				</ul>
+				</section>
+				<section class="3u 3u(medium) 12u$(small)">
+					<p>Posted by <br>{{project.author}}</p>
+					
+				</section>
+				<section class="3u 3u(medium) 12u$(small)">
+					<p>Date: {{project.date_created}} <br>
+					Updated: {{project.date_updated}}</p>
+					
+				</section>
+				
+			</div>
+
+
+			<div class="row">
+					{% if project.header.type == 'image' %}
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/lab/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
+					{% else %}
+					<div class="12u 12u$(large) 12u$(small)"><figure>
+						<iframe src="http://player.vimeo.com/video/{{project.header.url}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
+						</figure>
+					</div>
+					{% endif %}
+			</div>	
+
+				
+			{% for step in project.steps %}
+					{% if step.type == 'copy' %}
+						<hr class="major" />
+							<div class="row homerollover">
+								<section class="6u 6u(medium) 12u$(small)">
+									<h3>{{step.title}}</h3>
+									
+								</section>
+								<section class="6u$ 6u$(medium) 12u$(small)">
+									
+									<p>{{step.copy}}</p>
+								</section>
+							</div>
+					{% else %}
+
+						<div class="row">
+								<div class="6u  12u$(small)"><span class="image fit"><img src="/images/lab/{{project.slug}}/{{step.images[0]}}" alt="" /></span></div>
+								<div class="6u  12u$(small)"><span class="image fit"><img src="/images/lab/{{project.slug}}/{{step.images[1]}}" alt="" /></span></div>
+						</div>
+
+					{% endif %}
+
+
+			{% endfor %}
+							
+
+	
+			
+
+		</div>
+
+
+{% endblock %}

@@ -1,9 +1,10 @@
 {
   "name": "superbright",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "superbright website",
   "main": "app.js",
   "dependencies": {
+    "basic-auth": "^1.0.3",
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "gulp": "^3.9.0",

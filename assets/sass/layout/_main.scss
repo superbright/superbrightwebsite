@@ -13,3 +13,9 @@
 			@include padding(3em, 0);
 		}
 	}
+
+	p {
+		a {
+			color: _palette(fg);
+		}
+	}

@@ -40,6 +40,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/assets\/images\/contact\/alright_satellite_001.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 346834,
+		"inputAbbreviatedPath": "\/assets\/images\/contact\/alright_satellite_001.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/contact\/alright_satellite_001.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/pic01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -58,72 +69,6 @@
 		"initialSize": 2912,
 		"inputAbbreviatedPath": "\/assets\/images\/pic02.jpg",
 		"outputAbbreviatedPath": "\/assets\/images\/pic02.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_001.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 357017,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_001.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_001.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_002.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 288396,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_002.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_002.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_003.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 305270,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_003.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_003.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_004.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3.10425e+06,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_004.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_004.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_005.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 440467,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_005.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_005.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_006.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 229852,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_006.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/cignastepup\/Cigna_Stepup_006.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -157,6 +102,72 @@
 		"initialSize": 1.30626e+06,
 		"inputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_002.JPG",
 		"outputAbbreviatedPath": "\/assets\/images\/projects\/conductiveinktouchpad\/etextilespart_1_002.JPG",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_001.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 357017,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_001.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_001.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_002.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 288396,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_002.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_002.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_003.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 305270,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_003.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_003.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_004.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3.10425e+06,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_004.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_004.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_005.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 440467,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_005.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_005.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_006.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 229852,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_006.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/disneyworldmarathonstepup\/Cigna_Stepup_006.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

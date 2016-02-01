@@ -1,4 +1,4 @@
-
+1
 module.exports = {
 
 
@@ -30,7 +30,7 @@ module.exports = {
 			'image' : 'pic01.jpg'
 		}],
 		'images' : [
-			'Rise_Nation_Superbright_001.jpg','Rise_Nation_Superbright_002.jpg','Rise_Nation_Superbright_003.jpg','Rise_Nation_Superbright_004.jpg','Rise_Nation_Superbright_005.jpg'
+			'contact/alright_satellite_001.jpg'
 		]
 
 	},
@@ -106,7 +106,24 @@ module.exports = {
 	],
   
 	projects :  
-				[
+				[	
+					{
+						'title' : 'Disney Marathon Step Up',
+						'slug' : 'disneyworldmarathonstepup',
+						'type' : 'portfolio',
+						'description' : 'Disney Marathon Step Up Project Description',
+						'descriptionshort' : 'Disney Marathon Step Up Project Description Short',
+						'header' : {
+							'type' : 'image',
+							'url' : 'Cigna_Stepup_001.jpg'
+						},
+						'images' : [
+							'Cigna_Stepup_001.jpg','Cigna_Stepup_002.jpg','Cigna_Stepup_003.jpg','Cigna_Stepup_004.jpg','Cigna_Stepup_005.jpg'
+						],
+						'tagids' : [
+							10000
+						]
+					},
 					{
 						'title' : 'Rise Nation',
 						'slug' : 'risenation',

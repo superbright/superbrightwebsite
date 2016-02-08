@@ -50,9 +50,9 @@
 			        new QueryLoader2(document.querySelector("body"), {
 			            barColor: "#69F7EB",
 			            backgroundColor: "#fff",
-			            percentage: true,
+			            percentage: false,
 			            barHeight: 1250,
-			            minimumTime: 0,
+			            minimumTime: 1,
 			            fadeOutTime: 1000
 			        });
 			  });

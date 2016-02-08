@@ -51,7 +51,7 @@
 			            barColor: "#69F7EB",
 			            backgroundColor: "#fff",
 			            percentage: true,
-			            barHeight: 850,
+			            barHeight: 1250,
 			            minimumTime: 0,
 			            fadeOutTime: 1000
 			        });

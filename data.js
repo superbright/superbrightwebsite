@@ -108,7 +108,7 @@ module.exports = {
 							'url' : 'alright_satellite_001.jpg'
 						},
 						'images' : [
-							'alright_satellite_006.gif', 'alright_satellite_002.jpg','alright_satellite_003.jpg','alright_satellite_004.jpg','alright_satellite_005.jpg','alright_satellite_007.jpg'
+							'alright_satellite_008.jpg', 'alright_satellite_002.jpg','alright_satellite_003.jpg','alright_satellite_004.jpg','alright_satellite_005.jpg','alright_satellite_007.jpg','alright_satellite_006.gif'
 						],
 						'tagids' : [
 							10004

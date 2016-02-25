@@ -293,6 +293,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/projects\/elementaryparticles\/alright_satellite_008.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 187611,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/elementaryparticles\/alright_satellite_008.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/elementaryparticles\/alright_satellite_008.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_001.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

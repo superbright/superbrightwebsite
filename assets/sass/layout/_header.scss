@@ -40,6 +40,16 @@
 					// 	margin: 0 0.5em 0 0;
 					// }
 				}
+
+				.active {
+					color: _palette(accent2, bg);
+				}
+
+
+			}
+
+			.active {
+					color: _palette(accent2, bg);
 			}
 		}
 
@@ -50,6 +60,9 @@
 
 		#navsblg {
 			visibility: visible;
+			.active {
+					color: _palette(accent2, bg);
+			}
 		}
 
 		.logo {

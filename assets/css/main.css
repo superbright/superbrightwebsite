@@ -1877,11 +1877,17 @@ body {
           font-style: normal;
           font-weight: normal;
           text-transform: none !important; }
+      #header #rightnav a .active {
+        color: #69F7EB; }
+    #header #rightnav .active {
+      color: #69F7EB; }
   #header #navsb {
     visibility: hidden;
     display: none; }
   #header #navsblg {
     visibility: visible; }
+    #header #navsblg .active {
+      color: #69F7EB; }
   #header .logo {
     background-image: url("/images/mobile/Logo-01.svg");
     width: 250px;
@@ -2140,6 +2146,9 @@ p a {
 .homerollover:hover img {
   background-color: #81f8ee;
   opacity: 1.0; }
+
+.active {
+  color: #81f8ee; }
 
 #backtotop {
   cursor: pointer;

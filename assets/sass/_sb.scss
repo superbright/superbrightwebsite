@@ -23,6 +23,10 @@
 
 }
 
+.active {
+	color: lighten(_palette(accent2, bg), 5);
+}
+
 #backtotop {
 	cursor: pointer; cursor: hand; 
 	&:hover {

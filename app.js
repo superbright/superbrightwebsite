@@ -61,17 +61,17 @@ for(var i =0; i < data.products.length; i++) {
 app.use(express.static('assets'));
 
 // Authenticator
-app.use(function(req, res, next) {
-    var user = basicAuth(req);
+// app.use(function(req, res, next) {
+//     var user = basicAuth(req);
 
-    if (user === undefined || user['name'] !== 'superbright' || user['pass'] !== 'partytime') {
-        res.statusCode = 401;
-        res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
-        res.end('Unauthorized');
-    } else {
-        next();
-    }
-});
+//     if (user === undefined || user['name'] !== 'superbright' || user['pass'] !== 'partytime') {
+//         res.statusCode = 401;
+//         res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
+//         res.end('Unauthorized');
+//     } else {
+//         next();
+//     }
+// });
 
 nunjucks.configure(['/pages','pages'], {
   autoescape: true,

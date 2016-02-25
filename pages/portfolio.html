@@ -18,13 +18,13 @@
 						<section class="9u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
+										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><a href="/portfolio/{{project.slug}}"> <img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></a></span></div>
 									</div>
 								</div>
 						</section>
 					
 						<section class="3u$ 6u$(medium) 12u$(small)">
-							<h3>{{project.title}}</h3>
+							<h3 class="title"><a href="/{{project.type}}/{{project.slug}}">{{project.title}}</a></h3>
 							<ul class="actions small">
 									{% for tag in project.tags %}
 									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>

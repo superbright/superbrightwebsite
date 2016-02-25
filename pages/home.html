@@ -23,7 +23,7 @@
 								</div>
 						</section>
 						<section class="3u 6u(medium) 12u(small) ">
-							<h3>{{project.title}}</h3>
+							<h3 class="title"><a href="/{{project.type}}/{{project.slug}}">{{project.title}}</a></h3>
 							<ul class="actions small">
 									{% for tag in project.tags %}
 									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
@@ -32,7 +32,7 @@
 						</section>
 						<section class="3u$ 6u$(medium) 12u$(small)">
 							
-							<p>{{project.description}}</p>
+							<p>{{project.descriptionshort}}</p>
 						</section>
 					</div>
 				{% endfor %}

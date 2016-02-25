@@ -106,8 +106,9 @@ app.post('/tags', function(req, res) {
 });
 
 app.get('/', function(req, res) {
+  console.log(data.lab.concat(data.products).concat(data.projects));
   res.render('home.html', {
-    bannercopy : 'Hello Superbright',
+    bannercopy : 'Superbright is a studio for [play] which uses contemporary technology to produce unique products, engaging content, and powerful exchanges.',
     title : 'Superbright',
     projects: data.lab.concat(data.products).concat(data.projects)
   });
@@ -133,7 +134,7 @@ app.get('/portfolio/:id', function(req, res) {
 
   res.render('portfoliodetail.html', {
     title : 'Superbright',
-    bannercopy : 'Hello Project',
+    bannercopy : '',
     project : foundproject
   });
 });
@@ -151,7 +152,7 @@ app.get('/products/:id', function(req, res) {
 
   res.render('productdetail.html', {
     title : 'Superbright',
-    bannercopy : 'Hello product',
+    bannercopy : '',
     project : foundproduct
   });
 });
@@ -159,7 +160,7 @@ app.get('/products/:id', function(req, res) {
 app.get('/products', function(req, res) {
   res.render('products.html', {
     projects : data.products,
-    bannercopy : 'Hello Products',
+    bannercopy : '',
   });
 });
 
@@ -192,7 +193,7 @@ app.get('/lab/:id', function(req, res) {
 
 app.get('/contact', function(req, res) {
   res.render('contact.html', {
-    bannercopy : 'Hello Contact',
+    bannercopy : 'say hi',
     title : 'Superbright',
     data : data.contact
   });

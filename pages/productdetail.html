@@ -17,7 +17,7 @@
 
 			<div class="row">
 					{% if project.header.type == 'image' %}
-					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.header.url}}" alt="" /></span></div>
 					{% else %}
 					<div class="12u 12u$(large) 12u$(small)"><figure>
 						<iframe src="http://player.vimeo.com/video/{{project.header.url}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
@@ -34,12 +34,10 @@
 				<section class="3u 4u(medium) 12u$(small)">
 					<h3>{{project.title}}</h3>
 					<ul class="actions small">
-							<li><a href="#" class="button small buttoninlinetag">Small</a></li>
-							<li><a href="#" class="button small buttoninlinetag">Ssdmall</a></li>
-							<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-							<li><a href="#" class="button small buttoninlinetag">Bal bla bla</a></li>
-							<li><a href="#" class="button small buttoninlinetag">Small</a></li>
-				</ul>
+									{% for tag in project.tags %}
+									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
+									{% endfor %}
+					</ul>
 				</section>
 				<section class="6u 7u$(medium) 12u$(small)">
 					<p>{{project.description}}</p>
@@ -56,11 +54,11 @@
 					<div class="12u 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[1]}}" alt="" /></span></div>
 			</div>	
 			<div class="row">
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[1]}}" alt="" /></span></div>
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[2]}}" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[5]}}" alt="" /></span></div>
 			</div>	
 			<div class="row">
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[3]}}" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[2]}}" alt="" /></span></div>
 					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[4]}}" alt="" /></span></div>
 			</div>	
 

@@ -51,6 +51,61 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/contact\/caco.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 71299,
+		"inputAbbreviatedPath": "\/assets\/images\/contact\/caco.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/contact\/caco.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/contact\/duygudaniels.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 110961,
+		"inputAbbreviatedPath": "\/assets\/images\/contact\/duygudaniels.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/contact\/duygudaniels.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/contact\/igalnassima.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21557,
+		"inputAbbreviatedPath": "\/assets\/images\/contact\/igalnassima.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/contact\/igalnassima.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/contact\/melaniegonzales.jpeg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 185685,
+		"inputAbbreviatedPath": "\/assets\/images\/contact\/melaniegonzales.jpeg",
+		"outputAbbreviatedPath": "\/assets\/images\/contact\/melaniegonzales.jpeg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/contact\/susanngo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 156680,
+		"inputAbbreviatedPath": "\/assets\/images\/contact\/susanngo.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/contact\/susanngo.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/pic01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -227,24 +282,68 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/images\/projects\/lacostetennis\/Lacoste_001.jpg": {
+	"\/assets\/images\/projects\/elementaryparticles\/alright_satellite_007.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 956617,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacostetennis\/Lacoste_001.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacostetennis\/Lacoste_001.jpg",
+		"initialSize": 381491,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/elementaryparticles\/alright_satellite_007.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/elementaryparticles\/alright_satellite_007.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/images\/projects\/lacostetennis\/Lacoste_002.jpg": {
+	"\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_001.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 225957,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_001.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_001.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_002.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 518259,
-		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacostetennis\/Lacoste_002.jpg",
-		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacostetennis\/Lacoste_002.jpg",
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_002.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_002.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_003.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 394774,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_003.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_003.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_004.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 956617,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_004.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_004.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_005.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_005.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/projects\/lacosteinteractivekineticsculpture\/Lacoste_005.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1024,9 +1123,9 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "_DEV",
-	"displayValueWasSetByUser": 0,
-	"iconImageName": "globe_yellow"
+	"displayValue": "_Superbright DEV",
+	"displayValueWasSetByUser": 1,
+	"iconImageName": "compass_brown"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,

@@ -1942,7 +1942,8 @@ body {
     line-height: 44px; }
     #header #navsb {
       visibility: visible;
-      display: inline; }
+      display: inline;
+      margin-right: 20px; }
     #header #navsblg {
       visibility: hidden; }
     #header #rightnav {
@@ -1960,7 +1961,8 @@ body {
     line-height: 44px; }
     #header #navsb {
       visibility: visible;
-      display: inline; }
+      display: inline;
+      margin-right: 10px; }
     #header #navsblg {
       visibility: hidden; }
     #header #rightnav {
@@ -2138,6 +2140,18 @@ p a {
 .homerollover:hover img {
   background-color: #81f8ee;
   opacity: 1.0; }
+
+#backtotop {
+  cursor: pointer;
+  cursor: hand; }
+  #backtotop:hover {
+    color: #81f8ee; }
+
+.icon:hover {
+  color: #81f8ee; }
+
+.title:hover {
+  color: #81f8ee; }
 
 @media screen and (max-width: 1280px) {
   .secondrowimage {

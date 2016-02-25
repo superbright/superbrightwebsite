@@ -20,11 +20,30 @@
 				// background-color: darken(_palette(accent2, bg), 5);
 				// opacity: 0.4;
 			}
-		
 
-
-	
 }
+
+#backtotop {
+	cursor: pointer; cursor: hand; 
+	&:hover {
+				color: lighten(_palette(accent2, bg), 5);		
+			}
+} 
+
+.icon {
+	&:hover {
+				color: lighten(_palette(accent2, bg), 5);			
+			}
+}
+
+.title {
+	&:hover {
+				color: lighten(_palette(accent2, bg), 5);			
+			}
+}
+
+
+
 
 .secondrowimage {
 

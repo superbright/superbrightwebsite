@@ -12,8 +12,8 @@ module.exports = {
 
 		people: [
 		{
-			'name'  : 'igal nassima',
-			'title' : 'founder',
+			'name'  : 'Igal Nassima',
+			'title' : 'Research and Development',
 			'bio'	: "Igal is an a technologist working with art and design. He has a bachelors degree in Computer Science from WPI as well as an MS in Design from Tisch's ITP program. His work involves using physical computing, big data and mixed reality to create experiences where technology is integrated to existing behaviors. He has built projects for museums, festivals and brands including Modern Museum of Art, AMNH, NYBotanG, AT&T, Verizon, IBM and more.",
 			'image' : 'igalnassima.jpg'
 		},

@@ -132,7 +132,7 @@ module.exports = {
 							'Cigna_Stepup_001.jpg','Cigna_Stepup_002.jpg','Cigna_Stepup_003.jpg','Cigna_Stepup_004.jpg','Cigna_Stepup_005.jpg'
 						],
 						'tagids' : [
-							10000
+							10000,10007,1002
 						]
 					},
 					{
@@ -149,7 +149,7 @@ module.exports = {
 							'Rise_Nation_Superbright_001.jpg','Rise_Nation_Superbright_002.jpg','Rise_Nation_Superbright_003.jpg','Rise_Nation_Superbright_004.jpg','Rise_Nation_Superbright_005.jpg'
 						],
 						'tagids' : [
-							10000
+							10000,10007
 						]
 					},
 					{
@@ -166,7 +166,7 @@ module.exports = {
 							'nybg_augmentedreality_002.jpg','nybg_augmentedreality_003.jpg','nybg_augmentedreality_004.jpg','nybg_augmentedreality_001.jpg'
 						],
 						'tagids' : [
-							10001,10003
+							10001,10003,10007
 						]
 					},
 					{
@@ -183,7 +183,7 @@ module.exports = {
 							'Lacoste_001.jpg','Lacoste_002.jpg','Lacoste_003.jpg','Lacoste_004.jpg','Lacoste_005.jpg'
 						],
 						'tagids' : [
-							10000,10002
+							10006,10007
 						]
 					},
 					{
@@ -200,7 +200,7 @@ module.exports = {
 							'SXSW_AT&T_Teleporter_Superbright_001.jpg','SXSW_AT&T_Teleporter_Superbright_002.jpg','SXSW_AT&T_Teleporter_Superbright_003.jpg','SXSW_AT&T_Teleporter_Superbright_004.jpg','SXSW_AT&T_Teleporter_Superbright_005.png'
 						],
 						'tagids' : [
-							10000,10002
+							10005,10002,1003
 						]
 					}
 				],
@@ -209,38 +209,56 @@ module.exports = {
 			{
 				"name" : "LED Design",
 				"id" : 10000,
-				"description" : "LED description"
+				"description" : ""
 			},
+
 			{
 				"name" : "Augmented Reality",
 				"id" : 10001,
-				"description" : "Augmented reality (AR) is a live direct or indirect view of a physical, real-world environment whose elements are augmented (or supplemented) by computer-generated sensory input such as sound, video, graphics or GPS data."
+				"description" : ""
 			},
+			//Augmented reality (AR) is a live direct or indirect view of a physical, real-world environment whose elements are augmented (or supplemented) by computer-generated sensory input such as sound, video, graphics or GPS data.
 			{
 				"name" : "Game Design",
 				"id" : 10002,
-				"description" : "Game Design description"
+				"description" : ""
 			},
 			{
 				"name" : "Exhibit Design",
 				"id" : 10003,
-				"description" : "Exhibit Design description"
+				"description" : ""
 			},
 			{
 				"name" : "Mixed Reality",
 				"id" : 10004,
-				"description" : "Mixed Reality description"
+				"description" : ""
 			},
 			{
-				"name" : "Research",
+				"name" : "Projection Mapping",
 				"id" : 10005,
-				"description" : "Research description"
+				"description" : ""
 			},
 			{
-				"name" : "E-textile",
+				"name" : "Kinect Sculpture",
 				"id" : 10006,
-				"description" : "E-textile description"
-			}
+				"description" : ""
+			},
+			{
+				"name" : "Interactive",
+				"id" : 10007,
+				"description" : ""
+			},
+			//,
+			// {
+			// 	"name" : "Research",
+			// 	"id" : 10005,
+			// 	"description" : ""
+			// },
+			// {
+			// 	"name" : "E-textile",
+			// 	"id" : 10006,
+			// 	"description" : ""
+			// }
 	],
 
 	getTagfromID: function(id) {

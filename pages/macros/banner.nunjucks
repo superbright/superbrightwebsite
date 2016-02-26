@@ -12,7 +12,7 @@
 							<a href="/portfolio" id="navsblg" class="{%if activePage == 'portfolio' %} active {% endif %}">Portfolio</a>
 							<a href="/products" id="navsblg" class="{%if activePage == 'products' %} active {% endif %}">Products</a>
 						<!-- 	<a href="/lab" id="navsblg">Lab</a> -->
-							<a href="/contact" id="navsblg" class="{%if activePage == 'contact' %} active {% endif %}">Contact</a>
+							<a href="/contact" id="navsblg" class="{%if activePage == 'contact' %} active {% endif %}">About</a>
 							<a href="#nav" id="navsb"></a>
 						</div>
 					</div>
@@ -27,7 +27,7 @@
 					<li><a href="/portfolio">Portfolio</a></li>
 					<li><a href="/products">Products</a></li>
 					<!-- <li><a href="/lab">Lab</a></li> -->
-					<li><a href="/contact">Contact</a></li>
+					<li><a href="/contact">About</a></li>
 				</ul>
 				<hr class="major" />
 				<div class="row double">

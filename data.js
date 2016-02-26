@@ -105,10 +105,10 @@ module.exports = {
 						'descriptionshort' : "Alright Satellite is a mixed reality experience that utilizes both AR and VR, as well as physical trading cards, to teach kids about our solar system. The experience transforms kids into astronauts and each card triggers a single story such as learning more about a particular planet or following the path of the Mars Explorer mission.",
 						'header' : {
 							'type' : 'image',
-							'url' : 'alright_satellite_001.jpg'
+							'url' : 'alright_satellite_002.jpg'
 						},
 						'images' : [
-							'alright_satellite_008.jpg', 'alright_satellite_002.jpg','alright_satellite_003.jpg','alright_satellite_004.jpg','alright_satellite_005.jpg','alright_satellite_007.jpg','alright_satellite_006.gif'
+							'alright_satellite_001.jpg', 'alright_satellite_008.jpg','alright_satellite_003.jpg','alright_satellite_004.jpg','alright_satellite_005.jpg','alright_satellite_007.jpg','alright_satellite_006.gif'
 						],
 						'tagids' : [
 							10004

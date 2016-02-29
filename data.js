@@ -197,7 +197,7 @@ module.exports = {
 							'url' : '156700654'
 						},
 						'images' : [
-							'SXSW_AT&T_Teleporter_Superbright_001.jpg','SXSW_AT&T_Teleporter_Superbright_002.jpg','SXSW_AT&T_Teleporter_Superbright_003.jpg','SXSW_AT&T_Teleporter_Superbright_004.jpg','SXSW_AT&T_Teleporter_Superbright_005.png'
+							'SXSW_AT&T_Teleporter_Superbright_001.jpg','SXSW_AT&T_Teleporter_Superbright_002.jpg','SXSW_AT&T_Teleporter_Superbright_003.jpg','SXSW_AT&T_Teleporter_Superbright_004.jpg','SXSW_AT&T_Teleporter_Superbright_005.jpg'
 						],
 						'tagids' : [
 							10005,10002,1003

@@ -108,7 +108,7 @@ app.post('/tags', function(req, res) {
 app.get('/', function(req, res) {
   console.log(data.lab.concat(data.products).concat(data.projects));
   res.render('home.html', {
-    bannercopy : 'Superbright is a studio for [play] which uses contemporary technology to produce unique products, engaging content, and powerful exchanges.',
+    bannercopy : 'Superbright is a studio for play which uses contemporary technology to produce unique products, engaging content, and powerful exchanges.',
     title : 'Superbright',
     projects: data.lab.concat(data.products).concat(data.projects)
   });

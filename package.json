@@ -10,7 +10,8 @@
     "gulp": "^3.9.0",
     "gulp-data": "^1.2.1",
     "gulp-nunjucks-render": "^1.0.0",
-    "nunjucks": "^2.2.0"
+    "nunjucks": "^2.2.0",
+    "unirest": "v0.5.1"
   },
   "devDependencies": {},
   "scripts": {

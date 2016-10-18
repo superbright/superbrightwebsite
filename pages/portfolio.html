@@ -1,7 +1,7 @@
 {% extends "layout.nunjucks" %}
 
 
-{% block content %} 
+{% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
 {{nav.active('portfolio',bannercopy)}}
@@ -13,30 +13,30 @@
   				{% for project in projects %}
 				<!-- Intro -->
 				<hr class="major" />
-					
+
 					<div class="row homerollover">
 						<section class="9u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><a href="/portfolio/{{project.slug}}"> <img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></a></span></div>
+										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><a href="/portfolio/{{project.id}}"> <img src="{{project.images[0].guid}}" alt="" /></a></span></div>
 									</div>
 								</div>
 						</section>
-					
+
 						<section class="3u$ 6u$(medium) 12u$(small)">
-							<h3 class="title"><a href="/{{project.type}}/{{project.slug}}">{{project.title}}</a></h3>
+							<h3 class="title"><a href="/portfolio/{{project.id}}">{{project.title.rendered}}</a></h3>
 							<ul class="actions small">
 									{% for tag in project.tags %}
-									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
+									<li><a href="/tags/{{tag.slug}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
 									{% endfor %}
 								</ul>
-							<p>{{project.descriptionshort}}</p>
-							<p><a href="/portfolio/{{project.slug}}"> Read more -> </a></p>
+							<p>{{project.short_description}}</p>
+							<p><a href="/portfolio/{{project.id}}"> Read more -> </a></p>
 						</section>
 					</div>
 
 				{% endfor %}
-				
+
 
 			</div>
 

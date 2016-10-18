@@ -1,7 +1,7 @@
 {% extends "layout.nunjucks" %}
 
 
-{% block content %} 
+{% block content %}
 
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
@@ -13,12 +13,12 @@
 				<hr class="major" />
 					<div class="row homerollover">
 						<section class="6u 6u(medium) 12u$(small)">
-							<h3 class="title"><a href="/{{project.type}}/{{project.slug}}">{{project.title}}</a></h3>
+							<h3 class="title"><a href="/{{project.type}}/{{project.slug}}">{{project.title.rendered}}</a></h3>
 						<!-- 	<p>Sections</p> -->
 						</section>
 						<section class="6u$ 6u$(medium) 12u$(small)">
-							
-							<p>{{project.description}}</p>
+
+							<p>{{project.short_description}}</p>
 						</section>
 					</div>
 				{% endfor %}

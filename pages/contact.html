@@ -1,7 +1,7 @@
 {% extends "layout.nunjucks" %}
 
 
-{% block content %} 
+{% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
 {{nav.active('contact',bannercopy)}}
@@ -10,18 +10,17 @@
 		<div id="main" class="container">
 
 			<div class="row">
-					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/{{data.images[0]}}" alt="" /></span></div>
-			</div>					
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="{{data.header_images[0].guid}}" alt="" /></span></div>
+			</div>
 
 			<!-- Intro -->
 			<div class="row">
-				
 				<div class="4u 4u(large) 12u$(small)">
 					<hr class="major" />
 						<div class="row">
 							<div class="12u 12u$(large) 12u$(small)">
 								<h3>CONTACT</h3>
-								<p>361 Stagg St #406 Brooklyn NY 11237<br>646 6969286<br>igal@superbright.me</p>
+								<p>{{data.contact|safe}}</p>
 								<ul class="icons">
 											<li><a href="https://twitter.com/superbright_me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="https://www.facebook.com/Superbrightme-685676934818450/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -34,8 +33,7 @@
 						<div class="row">
 							<div class="12u 12u$(large) 12u$(small)">
 								<h3>CAPABILITIES</h3>
-								<p>Advertising, Art Direction, Branding & Identity, Brand Strategy, Concept Development, Copywriting, Environmental Design, Exhibition Design, Experiential Design, Film Direction, Furniture Design, Interactive, Print, Packaging Design, Signage</p>
-							<!-- 	<p>Download capabilities pdf</p> -->
+								<p>{{data.capabilities_copy|safe}}</p>
 							</div>
 						</div>
 					<!-- 	<hr class="major" />
@@ -52,19 +50,18 @@
 						<hr class="major" />
 				</div>
 				<div class="8u 8u(large) 12u$(small)">
-					
+
 				{% for person in data.people %}
 					<hr class="major" />
 					<div class="row homerollover">
 							<section class="6u 12u$(medium)">
 								<div class="box alt">
-											<span class="image fit"><img src="images/contact/{{person.image}}" alt="" /></span>
-										
+											<span class="image fit"><img src="{{person.biophoto.guid}}" alt="{{person.post_title}}" /></span>
 									</div>
 							</section>
 							<section class="6u$ 6u$(medium) 12u$(small)">
-								<h3>{{person.name}}</h3>
-								<p>{{person.title}}<br>
+								<h3>{{person.post_title}}</h3>
+								<p>{{person.position}}<br>
 								<p>{{person.bio}}</p>
 							</section>
 					</div>
@@ -73,7 +70,7 @@
 					<hr class="major" />
 				</div>
 
-			</div> 
+			</div>
 		</div>
 
 

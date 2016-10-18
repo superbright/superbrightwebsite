@@ -1,4 +1,3 @@
-1
 module.exports = {
 
 
@@ -71,23 +70,23 @@ module.exports = {
 			// 				{
 			// 					'type' : 'copy',
 			// 					'title': 'Introduction',
-			// 					'copy': 'The Concept What if a wall was a controler? What if designs of wallpaper would be actual touchpads? We could simply touch a wall to turn on lights, to control screens, or any other connected devices. We decided to test this idea and create a paper touchpad that would control inputs on a screen.'  
+			// 					'copy': 'The Concept What if a wall was a controler? What if designs of wallpaper would be actual touchpads? We could simply touch a wall to turn on lights, to control screens, or any other connected devices. We decided to test this idea and create a paper touchpad that would control inputs on a screen.'
 			// 				},
 			// 				{
 			// 					'type' : 'copy',
 			// 					'title': 'Materials',
-			// 					'copy': 'To prototype we used one of our favorite material to play/prototype with: the Bareconductive ink. The ink they produce is non-toxic, solvent free and water soluble. It can easy be applied on various substrates such as paper, wood and textile. The fasted way to apply the ink is to paint it directly on the material surface with a brush. '  
+			// 					'copy': 'To prototype we used one of our favorite material to play/prototype with: the Bareconductive ink. The ink they produce is non-toxic, solvent free and water soluble. It can easy be applied on various substrates such as paper, wood and textile. The fasted way to apply the ink is to paint it directly on the material surface with a brush. '
 			// 				},
 			// 				{
 			// 					'type' : 'dualimage',
 			// 					'images' : [
 			// 						'etextilespart_1_001.JPG','etextilespart_1_002.JPG'
-			// 					]  
+			// 					]
 			// 				},
 			// 				{
 			// 					'type' : 'copy',
 			// 					'title': 'Using ink',
-			// 					'copy': 'The resistance of the ink depends on the shape ratio. A ratio of 1 will have a resistance of 32Ω. This means that shapes of 1 inch x 1 inch and of 10 inches x 10 inches will have the same resistance of 32Ω.'  
+			// 					'copy': 'The resistance of the ink depends on the shape ratio. A ratio of 1 will have a resistance of 32Ω. This means that shapes of 1 inch x 1 inch and of 10 inches x 10 inches will have the same resistance of 32Ω.'
 			// 				}
 
 
@@ -116,8 +115,8 @@ module.exports = {
 					}
 
 	],
-	projects :  
-				[	
+	projects :
+				[
 					{
 						'title' : 'Disney Marathon Step Up',
 						'slug' : 'disneyworldmarathonstepup',
@@ -313,6 +312,3 @@ module.exports = {
 	}
 
 };
-
-
-

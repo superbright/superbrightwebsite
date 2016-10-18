@@ -3,6 +3,7 @@ var express   = require('express');
 var bodyParser = require('body-parser')
 var app       = express();
 var basicAuth = require('basic-auth');
+var unirest = require('unirest');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -17,14 +18,13 @@ app.listen( process.env.PORT || 3000);
 //   res.end(JSON.stringify(req.body, null, 2))
 // })
 
-
 var data = require('./data')
 
 //parse tags and attach them to projects
 //this is just to make things easier for now,
 //in the future it can be moved a db
 for(var i =0; i < data.projects.length; i++) {
-  
+
   var tagids = data.projects[i].tagids;
   var tags = [];
   tagids.forEach(function(tagid) {
@@ -35,7 +35,7 @@ for(var i =0; i < data.projects.length; i++) {
 }
 
 for(var i =0; i < data.lab.length; i++) {
-  
+
   var tagids = data.lab[i].tagids;
   var tags = [];
   tagids.forEach(function(tagid) {
@@ -46,7 +46,7 @@ for(var i =0; i < data.lab.length; i++) {
 }
 
 for(var i =0; i < data.products.length; i++) {
-  
+
   var tagids = data.products[i].tagids;
   var tags = [];
   tagids.forEach(function(tagid) {
@@ -78,26 +78,67 @@ nunjucks.configure(['/pages','pages'], {
   express   : app
 });
 
+function getSortFunction(fieldName) {
+    return function(post1, post2) {
+        return post1[fieldName] > post2[fieldName];
+    }
+}
+
+app.get('/test', function(req, res) {
+    unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_home')
+    .type('json')
+    .end(function (response) {
+      var home_array = new Array();
+      home_array = home_array.concat(response.body[0]["projects"]);
+      home_array = home_array.concat(response.body[0]["labs"]);
+      home_array = home_array.sort(getSortFunction("post_modified"));
+      res.send(home_array);
+    });
+});
 
 app.get('/tags/:tag', function(req, res) {
-  var tag = data.getTagfromTagname(req.params.tag);
 
-  var projects = data.getProjectfromTagID(tag.id);
-  var products = data.getProductfromTagID(tag.id);
-  var labitems = data.getLabfromTagID(tag.id);
-  
-  res.render('tags.html', {
-    bannercopy : tag.description,
-    projects : projects.concat(labitems).concat(products),
-    selectedtag: tag,
-    tags: data.tags
+
+  var tagslug = req.params.tag;
+  var currenttag;
+  var results = new Array();
+  unirest.get('http://me.superbright:8888/wp-json/wp/v2/sb_tags')
+  .type('json')
+  .end(function (response) {
+    var taglist = response.body;
+      for(var k = 0; k < taglist.length; k++) {
+          if(taglist[k].slug == tagslug) {
+            //set currenttag
+            currenttag = taglist[k];
+            var urlstosearch = taglist[k]._links["wp:post_type"];
+            unirest.get(urlstosearch[0].href)
+            .type('json')
+            .end(function (response) {
+                results = results.concat(response.body);
+                //call again
+                unirest.get(urlstosearch[1].href)
+                .type('json')
+                .end(function (response) {
+                    results = results.concat(response.body);
+                  //  res.send(taglist);
+                    res.render('tags.html', {
+                      bannercopy : currenttag.description,
+                      projects : results,
+                      selectedtag: currenttag,
+                      tags: taglist
+                    });
+                });
+            });
+          }
+      }
   });
+
 });
 
 app.post('/tags', function(req, res) {
 
   var tag = data.getTagfromID(req.body.tag);
-  
+
   res.send({
     bannercopy : tag.description,
     projects : data.getProjectfromTagID(tag.id),
@@ -106,36 +147,52 @@ app.post('/tags', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  console.log(data.lab.concat(data.products).concat(data.projects));
-  res.render('home.html', {
-    bannercopy : 'Superbright is a studio for play which uses contemporary technology to produce unique products, engaging content, and powerful exchanges.',
-    title : 'Superbright',
-    projects: data.lab.concat(data.products).concat(data.projects)
+  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_home')
+  .type('json')
+  .end(function (response) {
+
+    var projectslist = new Array();
+    projectslist = projectslist.concat(response.body[0].projects);
+    for(var i = 0; i < projectslist.length; i++) {
+        var arr = Object.keys(projectslist[i].tags).map(function (key) { return projectslist[i].tags[key]; });
+        projectslist[i].tags = arr;
+    }
+
+    res.render('home.html', {
+      bannercopy : 'Superbright is a studio for play which uses contemporary technology to produce unique products, engaging content, and powerful exchanges.',
+      title : 'Superbright',
+      projects: projectslist
+    });
   });
 });
 
 app.get('/portfolio', function(req, res) {
-  res.render('portfolio.html', {
-    projects : data.projects,
-    bannercopy : 'Hello Portfolio',
+  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_projects')
+  .type('json')
+  .end(function (response) {
+    var projectslist = new Array();
+    projectslist = projectslist.concat(response.body);
+    res.render('portfolio.html', {
+      projects : projectslist,
+      bannercopy : 'Hello Portfolio',
+    });
   });
 });
 
 app.get('/portfolio/:id', function(req, res) {
 
-  var foundproject = {};
+  console.log("id is " + req.params.id);
 
-  for(var i =0; i < data.projects.length; i++) {  
-    if(data.projects[i].slug === req.params.id) {
-        foundproject = data.projects[i];
-        break;
-    }
-  }
-
-  res.render('portfoliodetail.html', {
-    title : 'Superbright',
-    bannercopy : '',
-    project : foundproject
+  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_projects/' + req.params.id)
+  .type('json')
+  .end(function (response) {
+    console.log(response.body);
+    //var projectdata = projectslist.concat(response.body);
+    res.render('portfoliodetail.html', {
+      title : 'Superbright',
+      bannercopy : '',
+      project : response.body
+    });
   });
 });
 
@@ -143,7 +200,7 @@ app.get('/products/:id', function(req, res) {
 
   var foundproduct = {};
 
-  for(var i =0; i < data.products.length; i++) {  
+  for(var i =0; i < data.products.length; i++) {
     if(data.products[i].slug === req.params.id) {
         foundproduct = data.products[i];
         break;
@@ -165,6 +222,18 @@ app.get('/products', function(req, res) {
 });
 
 app.get('/lab', function(req, res) {
+
+  // unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_projects')
+  // .type('json')
+  // .end(function (response) {
+  //   var projectslist = new Array();
+  //   projectslist = projectslist.concat(response.body[0]);
+  //   res.render('portfolio.html', {
+  //     projects : projectslist,
+  //     bannercopy : 'Hello Portfolio',
+  //   });
+  // });
+
   res.render('lab.html', {
     bannercopy : 'Hello Lab',
     title : 'Superbright',
@@ -176,7 +245,7 @@ app.get('/lab/:id', function(req, res) {
 
   var foundproject = {};
 
-  for(var i =0; i < data.lab.length; i++) {  
+  for(var i =0; i < data.lab.length; i++) {
     if(data.lab[i].slug === req.params.id) {
         foundproject = data.lab[i];
         break;
@@ -192,9 +261,17 @@ app.get('/lab/:id', function(req, res) {
 
 
 app.get('/contact', function(req, res) {
-  res.render('contact.html', {
-    bannercopy : 'say hi',
-    title : 'Superbright',
-    data : data.contact
+
+  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_contact')
+  .type('json')
+  .end(function (response) {
+    console.log(response.body);
+    //var projectdata = projectslist.concat(response.body);
+    res.render('contact.html', {
+      bannercopy : 'say hi',
+      title : 'Superbright',
+      data : response.body[0]
+    });
   });
+
 });

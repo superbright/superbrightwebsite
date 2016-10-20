@@ -5,6 +5,8 @@ var app       = express();
 var basicAuth = require('basic-auth');
 var unirest = require('unirest');
 
+var url = "http://162.243.67.91/wp-json/wp/v2";
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -12,11 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.listen( process.env.PORT || 3000);
 
-// app.use(function (req, res) {
-//   res.setHeader('Content-Type', 'text/plain')
-//   res.write('you posted:\n')
-//   res.end(JSON.stringify(req.body, null, 2))
-// })
 
 var data = require('./data')
 
@@ -35,7 +32,6 @@ for(var i =0; i < data.projects.length; i++) {
 }
 
 for(var i =0; i < data.lab.length; i++) {
-
   var tagids = data.lab[i].tagids;
   var tags = [];
   tagids.forEach(function(tagid) {
@@ -85,7 +81,7 @@ function getSortFunction(fieldName) {
 }
 
 app.get('/test', function(req, res) {
-    unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_home')
+    unirest.get(url + '/sb_home')
     .type('json')
     .end(function (response) {
       var home_array = new Array();
@@ -102,7 +98,7 @@ app.get('/tags/:tag', function(req, res) {
   var tagslug = req.params.tag;
   var currenttag;
   var results = new Array();
-  unirest.get('http://me.superbright:8888/wp-json/wp/v2/sb_tags')
+  unirest.get(url + '/sb_tags')
   .type('json')
   .end(function (response) {
     var taglist = response.body;
@@ -147,15 +143,21 @@ app.post('/tags', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_home')
+  function first(obj) {
+    for (var a in obj) return a;
+  }
+
+  unirest.get(url + '/sb_home')
   .type('json')
   .end(function (response) {
 
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body[0].projects);
+    console.log(projectslist[1].project_type[first(projectslist[1].project_type)].name);
     for(var i = 0; i < projectslist.length; i++) {
         var arr = Object.keys(projectslist[i].tags).map(function (key) { return projectslist[i].tags[key]; });
         projectslist[i].tags = arr;
+        projectslist[i].type = projectslist[1].project_type[first(projectslist[1].project_type)].name;
     }
 
     res.render('home.html', {
@@ -167,7 +169,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/portfolio', function(req, res) {
-  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_projects')
+  unirest.get(url  + '/sb_projects')
   .type('json')
   .end(function (response) {
     var projectslist = new Array();
@@ -179,19 +181,19 @@ app.get('/portfolio', function(req, res) {
   });
 });
 
-app.get('/portfolio/:id', function(req, res) {
+app.get('/portfolio/:name', function(req, res) {
 
   console.log("id is " + req.params.id);
 
-  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_projects/' + req.params.id)
+  unirest.get(url + '/sb_projects?filter[name]=' + req.params.name)
   .type('json')
   .end(function (response) {
-    console.log(response.body);
+    console.log(response.body[0]);
     //var projectdata = projectslist.concat(response.body);
     res.render('portfoliodetail.html', {
       title : 'Superbright',
       bannercopy : '',
-      project : response.body
+      project : response.body[0]
     });
   });
 });
@@ -262,7 +264,7 @@ app.get('/lab/:id', function(req, res) {
 
 app.get('/contact', function(req, res) {
 
-  unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_contact')
+  unirest.get(url + '/sb_contact')
   .type('json')
   .end(function (response) {
     console.log(response.body);

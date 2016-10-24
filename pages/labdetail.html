@@ -46,8 +46,8 @@
 					{% if project.header.type == 'image' %}
 					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
 					{% else %}
-					<div class="12u 12u$(large) 12u$(small)"><figure>
-						<iframe src="http://player.vimeo.com/video/{{project.header.url}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
+          <div class="12u 12u$(large) 12u$(small)"><figure>
+						<iframe src="http://player.vimeo.com/video/{{project.videourl}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
 						</figure>
 					</div>
 					{% endif %}

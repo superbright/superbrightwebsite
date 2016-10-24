@@ -1,7 +1,7 @@
 {% extends "layout.nunjucks" %}
 
 
-{% block content %} 
+{% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
 {{nav.active('lab',bannercopy)}}
@@ -13,30 +13,30 @@
 				<hr class="major" />
 					<div class="row homerollover">
 						<section class="3u 12u(medium) 12u$(small)">
-								<h3>{{project.title}}</h3>
-								<p>Posted by {{project.author}}<br>{{project.date_created}}</p>
+								<h3>{{project.title.rendered}}</h3>
+								<p>Posted by {{project.author}}<br>{{project.post_date}}</p>
 						</section>
 						<section class="3u 12u(medium) 12u$(small)">
-						
+
 							<ul class="actions small">
 									{% for tag in project.tags %}
 									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
 									{% endfor %}
 								</ul>
-							<p>{{project.descriptionshort}}</p>
+							<p>{{project.content.rendered}}</p>
 							<p><a href="/lab/{{project.slug}}"> Read more -> </a></p>
 						</section>
 						<section class="6u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
+											<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="{{project.header_image.guid}}" alt="" /></span></div>
 									</div>
 								</div>
 						</section>
 					</div>
 
 			{% endfor %}
-					
+
 
 					</div>
 

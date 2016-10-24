@@ -1,7 +1,7 @@
 {% extends "layout.nunjucks" %}
 
 
-{% block content %} 
+{% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
 {{nav.active('products',bannercopy)}}
@@ -17,50 +17,50 @@
 
 			<div class="row">
 					{% if project.header.type == 'image' %}
-					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.header.url}}" alt="" /></span></div>
+					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="{{project.images[0].guid}}" alt="" /></span></div>
 					{% else %}
 					<div class="12u 12u$(large) 12u$(small)"><figure>
-						<iframe src="http://player.vimeo.com/video/{{project.header.url}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
+						<iframe src="http://player.vimeo.com/video/{{project.videourl}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
 						</figure>
 					</div>
 					{% endif %}
-			</div>					
+			</div>
 
 				<!-- Intro -->
 			<hr class="major" />
-					
+
 			<div class="row">
-				
+
 				<section class="3u 4u(medium) 12u$(small)">
-					<h3>{{project.title}}</h3>
+					<h3>{{project.title.rendered}}</h3>
 					<ul class="actions small">
 									{% for tag in project.tags %}
-									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
+									<li><a href="/tags/{{tag.slug}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
 									{% endfor %}
 					</ul>
 				</section>
 				<section class="6u 7u$(medium) 12u$(small)">
-					<p>{{project.description}}</p>
-					
+					<p>{{project.short_description}}</p>
+
 				</section>
 				<!-- <section class="3u 6u$(medium) 12u$(small)">
 					<p>Share on Facebook<br>
 					Post on Twitter</p>
-					
+
 				</section> -->
-				
+
 			</div>
 				<div class="row">
-					<div class="12u 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[1]}}" alt="" /></span></div>
-			</div>	
+					<div class="12u 12u$(small)"><span class="image fit"><img src="{{project.images[0].guid}}" alt="" /></span></div>
+			</div>
 			<div class="row">
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[5]}}" alt="" /></span></div>
-			</div>	
+					<div class="6u  12u$(small)"><span class="image fit"><img src="{{project.images[1].guid}}" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="{{project.images[2].guid}}" alt="" /></span></div>
+			</div>
 			<div class="row">
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[2]}}" alt="" /></span></div>
-					<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[4]}}" alt="" /></span></div>
-			</div>	
+					<div class="6u  12u$(small)"><span class="image fit"><img src="{{project.images[3].guid}}" alt="" /></span></div>
+					<div class="6u  12u$(small)"><span class="image fit"><img src="{{project.images[4].guid}}" alt="" /></span></div>
+			</div>
 
 		</div>
 

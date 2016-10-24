@@ -94,7 +94,6 @@ app.get('/test', function(req, res) {
 
 app.get('/tags/:tag', function(req, res) {
 
-
   var tagslug = req.params.tag;
   var currenttag;
   var results = new Array();
@@ -153,7 +152,16 @@ app.get('/', function(req, res) {
 
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body[0].projects);
-    console.log(projectslist[1].project_type[first(projectslist[1].project_type)].name);
+    projectslist = projectslist.concat(response.body[0].products);
+    projectslist = projectslist.concat(response.body[0].labs);
+
+    projectslist = projectslist.sort(function(a,b){
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      console.log(b.post_date);
+      return new Date(b.post_date) - new Date(a.post_date);
+    });
+
     for(var i = 0; i < projectslist.length; i++) {
         var arr = Object.keys(projectslist[i].tags).map(function (key) { return projectslist[i].tags[key]; });
         projectslist[i].tags = arr;
@@ -183,13 +191,10 @@ app.get('/portfolio', function(req, res) {
 
 app.get('/portfolio/:name', function(req, res) {
 
-  console.log("id is " + req.params.id);
-
   unirest.get(url + '/sb_projects?filter[name]=' + req.params.name)
   .type('json')
   .end(function (response) {
     console.log(response.body[0]);
-    //var projectdata = projectslist.concat(response.body);
     res.render('portfoliodetail.html', {
       title : 'Superbright',
       bannercopy : '',
@@ -198,49 +203,50 @@ app.get('/portfolio/:name', function(req, res) {
   });
 });
 
-app.get('/products/:id', function(req, res) {
+app.get('/products/:name', function(req, res) {
 
-  var foundproduct = {};
-
-  for(var i =0; i < data.products.length; i++) {
-    if(data.products[i].slug === req.params.id) {
-        foundproduct = data.products[i];
-        break;
-    }
-  }
-
-  res.render('productdetail.html', {
-    title : 'Superbright',
-    bannercopy : '',
-    project : foundproduct
+  unirest.get(url + '/sb_products?filter[name]=' + req.params.name)
+  .type('json')
+  .end(function (response) {
+    //res.send(response.body[0]);
+    res.render('productdetail.html', {
+      title : 'Superbright',
+      bannercopy : '',
+      project : response.body[0]
+    });
   });
+
 });
 
 app.get('/products', function(req, res) {
-  res.render('products.html', {
-    projects : data.products,
-    bannercopy : '',
+  // /sb_products
+  unirest.get(url  + '/sb_products')
+  .type('json')
+  .end(function (response) {
+    var projectslist = new Array();
+    projectslist = projectslist.concat(response.body);
+    res.render('products.html', {
+      projects : projectslist,
+      bannercopy : 'Hello Portfolio',
+    });
   });
 });
 
 app.get('/lab', function(req, res) {
+  unirest.get(url +  '/sb_lab')
+  .type('json')
+  .end(function (response) {
+    var projectslist = new Array();
+    projectslist = projectslist.concat(response.body);
 
-  // unirest.get('http://me.superbright:8888//wp-json/wp/v2/sb_projects')
-  // .type('json')
-  // .end(function (response) {
-  //   var projectslist = new Array();
-  //   projectslist = projectslist.concat(response.body[0]);
-  //   res.render('portfolio.html', {
-  //     projects : projectslist,
-  //     bannercopy : 'Hello Portfolio',
-  //   });
-  // });
+    console.log(projectslist[0].header_image.guid);
 
-  res.render('lab.html', {
-    bannercopy : 'Hello Lab',
-    title : 'Superbright',
-    projects : data.lab
+    res.render('lab.html', {
+      projects : projectslist,
+      bannercopy : 'Hello Portfolio',
+    });
   });
+
 });
 
 app.get('/lab/:id', function(req, res) {

@@ -1,10 +1,10 @@
 {% extends "layout.nunjucks" %}
 
 
-{% block content %} 
+{% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
-{{nav.active('portfolio',bannercopy)}}
+{{nav.active('lab',bannercopy)}}
 
   <style scoped>video {
   width: 100%    !important;
@@ -16,10 +16,10 @@
 
 					<!-- Intro -->
 			<hr class="major" />
-					
+
 			<div class="row">
 				<section class="3u 3u(medium) 12u$(small)">
-					<h3>{{project.title}}</h3>
+					<h3>{{project.title.rendered}}</h3>
 				</section>
 
 				<section class="3u 3u(medium) 12u$(small)">
@@ -31,14 +31,14 @@
 				</section>
 				<section class="3u 3u(medium) 12u$(small)">
 					<p>Posted by <br>{{project.author}}</p>
-					
+
 				</section>
 				<section class="3u 3u(medium) 12u$(small)">
-					<p>Date: {{project.date_created}} <br>
-					Updated: {{project.date_updated}}</p>
-					
+					<p>Date: {{project.date}} <br>
+					Updated: {{project.modified}}</p>
+
 				</section>
-				
+
 			</div>
 
 
@@ -51,19 +51,19 @@
 						</figure>
 					</div>
 					{% endif %}
-			</div>	
+			</div>
 
-				
-			{% for step in project.steps %}
+
+			{% for step in project.lab_entry %}
 					{% if step.type == 'copy' %}
 						<hr class="major" />
 							<div class="row homerollover">
 								<section class="6u 6u(medium) 12u$(small)">
 									<h3>{{step.title}}</h3>
-									
+
 								</section>
 								<section class="6u$ 6u$(medium) 12u$(small)">
-									
+
 									<p>{{step.copy}}</p>
 								</section>
 							</div>
@@ -78,10 +78,10 @@
 
 
 			{% endfor %}
-							
 
-	
-			
+
+
+
 
 		</div>
 

@@ -165,7 +165,7 @@ app.get('/', function(req, res) {
     for(var i = 0; i < projectslist.length; i++) {
         var arr = Object.keys(projectslist[i].tags).map(function (key) { return projectslist[i].tags[key]; });
         projectslist[i].tags = arr;
-        projectslist[i].type = projectslist[1].project_type[first(projectslist[1].project_type)].name;
+        projectslist[i].type = projectslist[i].project_type[first(projectslist[i].project_type)].name;
     }
 
     res.render('home.html', {
@@ -249,22 +249,17 @@ app.get('/lab', function(req, res) {
 
 });
 
-app.get('/lab/:id', function(req, res) {
-
-  var foundproject = {};
-
-  for(var i =0; i < data.lab.length; i++) {
-    if(data.lab[i].slug === req.params.id) {
-        foundproject = data.lab[i];
-        break;
-    }
-  }
-
-  res.render('labdetail.html', {
-    bannercopy : 'Hello Lab',
-    title : 'Superbright',
-    project : foundproject
-  });
+app.get('/lab/:name', function(req, res) {
+    unirest.get(url + '/sb_lab?filter[name]=' + req.params.name)
+    .type('json')
+    .end(function (response) {
+      //res.send(response.body[0]);
+      res.render('labdetail.html', {
+        title : 'Superbright',
+        bannercopy : '',
+        project : response.body[0]
+      });
+    });
 });
 
 

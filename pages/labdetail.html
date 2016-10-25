@@ -55,23 +55,23 @@
 
 
 			{% for step in project.lab_entry %}
-					{% if step.type == 'copy' %}
+
 						<hr class="major" />
 							<div class="row homerollover">
 								<section class="6u 6u(medium) 12u$(small)">
-									<h3>{{step.title}}</h3>
+									<h3>{{step.post_title}}</h3>
 
 								</section>
 								<section class="6u$ 6u$(medium) 12u$(small)">
 
-									<p>{{step.copy}}</p>
+									<p>{{step.post_content}}</p>
 								</section>
 							</div>
-					{% else %}
-
+					{% if step.images.length > 0 %}
+          	<hr class="major" />
 						<div class="row">
-								<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{step.images[0]}}" alt="" /></span></div>
-								<div class="6u  12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{step.images[1]}}" alt="" /></span></div>
+								<div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[0].guid}}" alt="" /></span></div>
+								<div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[1].guid}}" alt="" /></span></div>
 						</div>
 
 					{% endif %}

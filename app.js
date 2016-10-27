@@ -239,7 +239,7 @@ app.get('/lab', function(req, res) {
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body);
 
-    console.log(projectslist[0].header_image.guid);
+    console.log(projectslist[0].images[0].guid);
 
     res.render('lab.html', {
       projects : projectslist,

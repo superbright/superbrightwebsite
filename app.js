@@ -55,17 +55,17 @@ for(var i =0; i < data.products.length; i++) {
 app.use(express.static('assets'));
 
 // Authenticator
-app.use(function(req, res, next) {
-    var user = basicAuth(req);
-
-    if (user === undefined || user['name'] !== 'superbright' || user['pass'] !== 'partytime') {
-        res.statusCode = 401;
-        res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
-        res.end('Unauthorized');
-    } else {
-        next();
-    }
-});
+// app.use(function(req, res, next) {
+//     var user = basicAuth(req);
+//
+//     if (user === undefined || user['name'] !== 'superbright' || user['pass'] !== 'partytime') {
+//         res.statusCode = 401;
+//         res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
+//         res.end('Unauthorized');
+//     } else {
+//         next();
+//     }
+// });
 
 nunjucks.configure(['/pages','pages'], {
   autoescape: true,
@@ -156,7 +156,6 @@ app.get('/', function(req, res) {
     projectslist = projectslist.sort(function(a,b){
       // Turn your strings into dates, and then subtract them
       // to get a value that is either negative, positive, or zero.
-      console.log(b.post_date);
       return new Date(b.post_date) - new Date(a.post_date);
     });
 
@@ -182,7 +181,7 @@ app.get('/portfolio', function(req, res) {
     projectslist = projectslist.concat(response.body);
     res.render('portfolio.html', {
       projects : projectslist,
-      bannercopy : 'Hello Portfolio',
+      bannercopy : '',
     });
   });
 });
@@ -225,7 +224,7 @@ app.get('/products', function(req, res) {
     projectslist = projectslist.concat(response.body);
     res.render('products.html', {
       projects : projectslist,
-      bannercopy : 'Hello Portfolio',
+      bannercopy : '',
     });
   });
 });
@@ -237,11 +236,9 @@ app.get('/lab', function(req, res) {
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body);
 
-
-
     res.render('lab.html', {
       projects : projectslist,
-      bannercopy : 'Hello Portfolio',
+      bannercopy : '',
     });
   });
 
@@ -251,6 +248,15 @@ app.get('/lab/:name', function(req, res) {
     unirest.get(url + '/sb_lab?filter[name]=' + req.params.name)
     .type('json')
     .end(function (response) {
+      var projectslist = new Array();
+      projectslist = projectslist.concat(response.body[0].lab_entry);
+      //sort lab response.body[0]
+      projectslist = projectslist.sort(function(a,b){
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(a.post_date) - new Date(b.post_date);
+      });
+      response.body[0].lab_entry = projectslist;
       //res.send(response.body[0]);
       res.render('labdetail.html', {
         title : 'Superbright',
@@ -269,7 +275,7 @@ app.get('/contact', function(req, res) {
     console.log(response.body);
     //var projectdata = projectslist.concat(response.body);
     res.render('contact.html', {
-      bannercopy : 'say hi',
+      bannercopy : '',
       title : 'Superbright',
       data : response.body[0]
     });

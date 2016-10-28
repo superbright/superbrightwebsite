@@ -57,14 +57,14 @@
 			{% for step in project.lab_entry %}
 
 						<hr class="major" />
-							<div class="row homerollover">
+							<div class="row homerollover" id="url">
 								<section class="6u 6u(medium) 12u$(small)">
 									<h3>{{step.post_title}}</h3>
 
 								</section>
 								<section class="6u$ 6u$(medium) 12u$(small)">
 
-									<p>{{step.post_content}}</p>
+									<p id="url">{{step.post_content|safe}}</p>
 								</section>
 							</div>
 					{% if step.images.length > 0 %}

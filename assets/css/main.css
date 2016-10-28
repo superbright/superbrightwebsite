@@ -2145,6 +2145,11 @@ p a {
   text-decoration: none; }
   #url a:hover {
     color: #69F7EB; }
+#url li a {
+  color: black;
+  text-decoration: none; }
+  #url li a:hover {
+    color: #69F7EB; }
 
 .homerollover img {
   background-color: #81f8ee;

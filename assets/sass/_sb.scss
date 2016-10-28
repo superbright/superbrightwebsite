@@ -7,6 +7,17 @@
 			color: _palette(accent2, bg);
 		}
 	}
+
+	li {
+		a {
+			color: _palette(accent2, fg);
+			text-decoration: none;
+
+			&:hover {
+				color: _palette(accent2, bg);
+			}
+		}
+	}
 }
 .homerollover {
 			& {

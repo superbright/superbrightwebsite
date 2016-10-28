@@ -30,12 +30,12 @@
 				</ul>
 				</section>
 				<section class="3u 3u(medium) 12u$(small)">
-					<p>Posted by <br>{{project.author}}</p>
+					<p id="url">Posted by <br><a href="http://twitter.com/{{project.authortwitterhandle}}">{{project.authorname}}</a></p>
 
 				</section>
 				<section class="3u 3u(medium) 12u$(small)">
-					<p>Date: {{project.date}} <br>
-					Updated: {{project.modified}}</p>
+					<p>Date: {{project.date.substring(0,10)}} <br>
+					Updated: {{project.modified.substring(0,10)}}</p>
 
 				</section>
 

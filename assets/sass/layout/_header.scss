@@ -36,9 +36,6 @@
 				@include icon('\f0c9');
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 
-					// &:before {
-					// 	margin: 0 0.5em 0 0;
-					// }
 				}
 
 				.active {
@@ -144,7 +141,7 @@
 		#header {
 			height: 44px;
 			line-height: 44px;
-			
+
 			#navsb {
 				visibility: visible;
 				display: inline;
@@ -176,7 +173,7 @@
 			min-width: 320px;
 			height: 44px;
 			line-height: 44px;
-			
+
 			#navsb {
 				visibility: visible;
 				display: inline;

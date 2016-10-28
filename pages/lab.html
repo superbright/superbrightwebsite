@@ -14,7 +14,7 @@
 					<div class="row homerollover">
 						<section class="3u 12u(medium) 12u$(small)">
 								<h3>{{project.title.rendered}}</h3>
-								<p>Posted by {{project.author}}<br>{{project.post_date}}</p>
+								<p id="url">Posted by <a href="http://twitter.com/{{project.authortwitterhandle}}">{{project.authorname}}</a><br>{{project.date.substring(0,10)}}</p>
 						</section>
 						<section class="3u 12u(medium) 12u$(small)">
 
@@ -24,7 +24,7 @@
 									{% endfor %}
 								</ul>
 							<p>{{project.content.rendered}}</p>
-							<p><a href="/lab/{{project.slug}}"> Read more -> </a></p>
+							<p id="url"><a href="/lab/{{project.slug}}"> Read more -> </a></p>
 						</section>
 						<section class="6u 12u$(medium)">
 							<div class="box alt">

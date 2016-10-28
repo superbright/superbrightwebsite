@@ -1,7 +1,14 @@
+#url {
+	a {
+		color: _palette(accent2, fg);
+		text-decoration: none;
 
+		&:hover {
+			color: _palette(accent2, bg);
+		}
+	}
+}
 .homerollover {
-
-	
 			& {
 				img {
 					background-color: lighten(_palette(accent2, bg), 5);
@@ -28,21 +35,21 @@
 }
 
 #backtotop {
-	cursor: pointer; cursor: hand; 
+	cursor: pointer; cursor: hand;
 	&:hover {
-				color: lighten(_palette(accent2, bg), 5);		
+				color: lighten(_palette(accent2, bg), 5);
 			}
-} 
+}
 
 .icon {
 	&:hover {
-				color: lighten(_palette(accent2, bg), 5);			
+				color: lighten(_palette(accent2, bg), 5);
 			}
 }
 
 .title {
 	&:hover {
-				color: lighten(_palette(accent2, bg), 5);			
+				color: lighten(_palette(accent2, bg), 5);
 			}
 }
 
@@ -53,17 +60,17 @@
 
 	@include breakpoint(large) {
 				visibility: hidden;
-		
+
 		}
 
 	@include breakpoint(medium) {
 				visibility: hidden;
-		
+
 		}
 
 	@include breakpoint(small) {
 				visibility: hidden;
-		
+
 		}
 }
 

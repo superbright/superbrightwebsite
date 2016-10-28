@@ -52,8 +52,6 @@ for(var i =0; i < data.products.length; i++) {
    data.products[i].tags = tags;
 }
 
-
-
 app.use(express.static('assets'));
 
 // Authenticator
@@ -239,7 +237,7 @@ app.get('/lab', function(req, res) {
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body);
 
-    console.log(projectslist[0].images[0].guid);
+
 
     res.render('lab.html', {
       projects : projectslist,

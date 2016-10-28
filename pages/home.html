@@ -17,13 +17,13 @@
 						<section class="6u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform ">
-										<div class="6u 12u$(large) 12u$(small)"><span class="image fit"><a href="/{{project.type}}/{{project.post_name}}"><img src="{{project.images[0].guid}}" alt="" /></a></span></div>
-										<div class="6u$ 1u$(large) 1u$(small) secondrowimage"><span class="image fit"><a href="/{{project.type}}/{{project.post_name}}"><img src="{{project.images[1].guid}}" alt="" /></a></span></div>
+										<div class="6u 12u$(large) 12u$(small)"><span class="image fit"><a href="/{{project.type}}/{{project.slug}}"><img src="{{project.images[0].guid}}" alt="" /></a></span></div>
+										<div class="6u$ 1u$(large) 1u$(small) secondrowimage"><span class="image fit"><a href="/{{project.type}}/{{project.slug}}"><img src="{{project.images[1].guid}}" alt="" /></a></span></div>
 									</div>
 								</div>
-						</section>
+						</section> 
 						<section class="3u 6u(medium) 12u(small) ">
-							<h3 class="title"><a href="/{{project.type}}/{{project.post_name}}">{{project.post_title}}</a></h3>
+							<h3 class="title"><a href="/{{project.type}}/{{project.slug}}">{{project.post_title}}</a></h3>
 							<ul class="actions small">
 									{% for tag in project.tags %}
 									<li><a href="/tags/{{tag.name}}" class="button small buttoninlinetag">{{tag.name}}</a></li>

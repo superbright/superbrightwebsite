@@ -98,12 +98,16 @@ app.get('/tags/:tag', function(req, res) {
   unirest.get(url + '/sb_tags')
   .type('json')
   .end(function (response) {
+
     var taglist = response.body;
+    
       for(var k = 0; k < taglist.length; k++) {
+          console.log(taglist[k].slug + " " + tagslug);
           if(taglist[k].slug == tagslug) {
             //set currenttag
             currenttag = taglist[k];
             var urlstosearch = taglist[k]._links["wp:post_type"];
+            console.log(urlstosearch[0].href);
             unirest.get(urlstosearch[0].href)
             .type('json')
             .end(function (response) {
@@ -152,10 +156,7 @@ app.get('/', function(req, res) {
     projectslist = projectslist.concat(response.body[0].projects);
     projectslist = projectslist.concat(response.body[0].products);
     projectslist = projectslist.concat(response.body[0].labs);
-
     projectslist = projectslist.sort(function(a,b){
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
       return new Date(b.post_date) - new Date(a.post_date);
     });
 

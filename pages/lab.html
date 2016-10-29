@@ -23,7 +23,7 @@
 								<li><a href="/tags/{{tag.slug}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
 								{% endfor %}
 								</ul>
-							<p>{{project.short_description}}</p>
+							<p>{{project.short_description|safe}}</p>
 							<p id="url"><a href="/lab/{{project.slug}}"> Read more -> </a></p>
 						</section>
 						<section class="6u 12u$(medium)">

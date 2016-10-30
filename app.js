@@ -100,7 +100,7 @@ app.get('/tags/:tag', function(req, res) {
   .end(function (response) {
 
     var taglist = response.body;
-    
+
       for(var k = 0; k < taglist.length; k++) {
           console.log(taglist[k].slug + " " + tagslug);
           if(taglist[k].slug == tagslug) {

@@ -13,45 +13,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 app.listen( process.env.PORT || 3000);
-
-
-var data = require('./data')
-
-//parse tags and attach them to projects
-//this is just to make things easier for now,
-//in the future it can be moved a db
-for(var i =0; i < data.projects.length; i++) {
-
-  var tagids = data.projects[i].tagids;
-  var tags = [];
-  tagids.forEach(function(tagid) {
-     var tag = data.getTagfromID(tagid);
-     tags.push(tag);
-  });
-   data.projects[i].tags = tags;
-}
-
-for(var i =0; i < data.lab.length; i++) {
-  var tagids = data.lab[i].tagids;
-  var tags = [];
-  tagids.forEach(function(tagid) {
-     var tag = data.getTagfromID(tagid);
-     tags.push(tag);
-  });
-   data.lab[i].tags = tags;
-}
-
-for(var i =0; i < data.products.length; i++) {
-
-  var tagids = data.products[i].tagids;
-  var tags = [];
-  tagids.forEach(function(tagid) {
-     var tag = data.getTagfromID(tagid);
-     tags.push(tag);
-  });
-   data.products[i].tags = tags;
-}
-
 app.use(express.static('assets'));
 
 // Authenticator
@@ -95,41 +56,49 @@ app.get('/tags/:tag', function(req, res) {
   var tagslug = req.params.tag;
   var currenttag;
   var results = new Array();
-  unirest.get(url + '/sb_tags')
+  unirest.get(url + '/sb_tags?per_page=100')
   .type('json')
   .end(function (response) {
-
     var taglist = response.body;
+    var urls = ['/sb_projects?filter[sb_tag]=','/sb_products?filter[sb_tag]=','/sb_lab?filter[sb_tag]=']
 
+    var searchcalls = urls.map(function(urlpath) {
+      return new Promise(function(resolve, reject) {
+        return unirest.get(url + urlpath +tagslug)
+                      .end(function(data){
+                        resolve(data);
+        });
+      });
+    });
+
+    // Use Promise.all to wait for all requests to finish
+    // and send the response to the client.
+    Promise.all(searchcalls).then(function(result) {
+      var content = result.map(function(searchresult) {
+        return searchresult.body;
+      });
+      var merged = [].concat.apply([], content);
+      console.log(merged.length);
+      for(var i = 0; i < merged.length; i++) {
+        //console.log(merged[i].project_type[0].name);
+        merged[i].type  = merged[i].project_type[0].name;
+          //merged[i].type = merged[i].project_type[first(merged[i].project_type)].name;
+      }
+      //res.send(merged);
       for(var k = 0; k < taglist.length; k++) {
-          console.log(taglist[k].slug + " " + tagslug);
           if(taglist[k].slug == tagslug) {
             //set currenttag
             currenttag = taglist[k];
-            var urlstosearch = taglist[k]._links["wp:post_type"];
-            console.log(urlstosearch[0].href);
-            unirest.get(urlstosearch[0].href)
-            .type('json')
-            .end(function (response) {
-                results = results.concat(response.body);
-                //call again
-                unirest.get(urlstosearch[1].href)
-                .type('json')
-                .end(function (response) {
-                    results = results.concat(response.body);
-                  //  res.send(taglist);
-                    res.render('tags.html', {
+          }
+      }
+      res.render('tags.html', {
                       bannercopy : currenttag.description,
-                      projects : results,
+                      projects : merged,
                       selectedtag: currenttag,
                       tags: taglist
                     });
-                });
-            });
-          }
-      }
+    });
   });
-
 });
 
 app.post('/tags', function(req, res) {

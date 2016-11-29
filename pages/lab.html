@@ -4,7 +4,7 @@
 {% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
-{{nav.active('lab',bannercopy)}}
+{{nav.active('nocturnal',bannercopy)}}
 
 		<!-- Main -->
 			<div id="main" class="container">
@@ -13,7 +13,7 @@
 				<hr class="major" />
 					<div class="row homerollover">
 						<section class="3u 12u(medium) 12u$(small)">
-								<h3 class="title"><a href="/lab/{{project.slug}}">{{project.title.rendered}}</a></h3>
+								<h3 class="title"><a href="/nocturnal/{{project.slug}}">{{project.title.rendered}}</a></h3>
 								<p id="url">Posted by <a href="http://twitter.com/{{project.authortwitterhandle}}">{{project.authorname}}</a><br>{{project.date.substring(0,10)}}</p>
 						</section>
 						<section class="3u 12u(medium) 12u$(small)">
@@ -24,7 +24,7 @@
 								{% endfor %}
 								</ul>
 							<p>{{project.short_description|safe}}</p>
-							<p id="url"><a href="/lab/{{project.slug}}"> Read more -> </a></p>
+							<p id="url"><a href="/nocturnal/{{project.slug}}"> Read more -> </a></p>
 						</section>
 						<section class="6u 12u$(medium)">
 							<div class="box alt">

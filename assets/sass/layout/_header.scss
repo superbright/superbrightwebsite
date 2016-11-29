@@ -62,12 +62,21 @@
 			}
 		}
 
+		.active {
+			.logo {
+				background-image: url('/images/mobile/Logo-01_hover.svg');
+			}
+		}
 		.logo {
 			background-image: url('/images/mobile/Logo-01.svg');
-			width: 250px;
-			height: 20px;
+			width: 300px;
+			height: 30px;
+			background-size: 300px 30px;
 			background-repeat: no-repeat;
 			margin-top: 15px;
+			&:hover {
+				background-image: url('/images/mobile/Logo-01_hover.svg');
+			}
 		}
 
 		> h1 {

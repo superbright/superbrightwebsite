@@ -42,7 +42,7 @@
 						letter-spacing: _size(letter-spacing-alt);
 						line-height: 3.5em;
 						text-decoration: none;
-						
+
 					}
 
 					> .button {
@@ -94,7 +94,7 @@
 			&:hover {
 				//color: _palette(accent2, fg-bold);
 				background-image: url('../images/mobile/X-Tap-White-22.svg');
-				
+
 			}
 
 			@include breakpoint(small) {

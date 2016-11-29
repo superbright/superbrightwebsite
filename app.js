@@ -15,6 +15,12 @@ app.use(bodyParser.json())
 app.listen( process.env.PORT || 3000);
 app.use(express.static('assets'));
 
+
+ var bannercopyhome = "Superbright is a creative technology studio that makes AR, VR, and Physical Computing experiences thought-provoking as they are practical. Our studio in Bushwick also provides an interdisciplinary hacker-space in which artists and developers combine product development, commissioned client work, and ongoing residencies to form a holistic perspective on these nascent tools and their future application. Thus, our brand work leverages the sophistication of the artistic dialog, telling industry stories not only through a new experiential dimension but also through a critical social lens.";
+ var bannercopyint = "These are things we’ve built to satisfy our own curiosity.";
+ var bannercopyext = "These are things we’ve built with brands.";
+ var bannercopynoc = "These are quick projects we’ve done in the name of experimentation: focus groups, quick hacks, prototypes, and research that’s of value to the community."
+
 // Authenticator
 // app.use(function(req, res, next) {
 //     var user = basicAuth(req);
@@ -38,7 +44,6 @@ function getSortFunction(fieldName) {
         return post1[fieldName] > post2[fieldName];
     }
 }
-
 app.get('/test', function(req, res) {
     unirest.get(url + '/sb_home')
     .type('json')
@@ -136,14 +141,14 @@ app.get('/', function(req, res) {
     }
 
     res.render('home.html', {
-      bannercopy : 'Superbright is a studio for play which uses contemporary technology to produce unique products, engaging content, and powerful exchanges.',
+      bannercopy : bannercopyhome,
       title : 'Superbright',
       projects: projectslist
     });
   });
 });
 
-app.get('/portfolio', function(req, res) {
+app.get('/external', function(req, res) {
   unirest.get(url  + '/sb_projects')
   .type('json')
   .end(function (response) {
@@ -151,12 +156,12 @@ app.get('/portfolio', function(req, res) {
     projectslist = projectslist.concat(response.body);
     res.render('portfolio.html', {
       projects : projectslist,
-      bannercopy : '',
+      bannercopy : bannercopyext,
     });
   });
 });
 
-app.get('/portfolio/:name', function(req, res) {
+app.get('/external/:name', function(req, res) {
 
   unirest.get(url + '/sb_projects?filter[name]=' + req.params.name)
   .type('json')
@@ -164,13 +169,13 @@ app.get('/portfolio/:name', function(req, res) {
     console.log(response.body[0]);
     res.render('portfoliodetail.html', {
       title : 'Superbright',
-      bannercopy : '',
+      bannercopy : "",
       project : response.body[0]
     });
   });
 });
 
-app.get('/products/:name', function(req, res) {
+app.get('/internal/:name', function(req, res) {
 
   unirest.get(url + '/sb_products?filter[name]=' + req.params.name)
   .type('json')
@@ -182,10 +187,9 @@ app.get('/products/:name', function(req, res) {
       project : response.body[0]
     });
   });
-
 });
 
-app.get('/products', function(req, res) {
+app.get('/internal', function(req, res) {
   // /sb_products
   unirest.get(url  + '/sb_products')
   .type('json')
@@ -194,12 +198,12 @@ app.get('/products', function(req, res) {
     projectslist = projectslist.concat(response.body);
     res.render('products.html', {
       projects : projectslist,
-      bannercopy : '',
+      bannercopy : bannercopyint
     });
   });
 });
 
-app.get('/lab', function(req, res) {
+app.get('/nocturnal', function(req, res) {
   unirest.get(url +  '/sb_lab')
   .type('json')
   .end(function (response) {
@@ -208,13 +212,12 @@ app.get('/lab', function(req, res) {
 
     res.render('lab.html', {
       projects : projectslist,
-      bannercopy : '',
+      bannercopy : bannercopynoc
     });
   });
-
 });
 
-app.get('/lab/:name', function(req, res) {
+app.get('/nocturnal/:name', function(req, res) {
     unirest.get(url + '/sb_lab?filter[name]=' + req.params.name)
     .type('json')
     .end(function (response) {

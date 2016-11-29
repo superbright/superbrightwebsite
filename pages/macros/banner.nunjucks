@@ -5,14 +5,14 @@
 			<header id="header">
 				<div class="row">
 					<div class="3u 0u(medium)">
-						<a href="/" class="{%if activePage == 'home' %} active {% endif %}"><div class="logo"></div></a>
+						<a href="/" class="{%if activePage == 'home' %}active{% endif %}"><div class="logo"></div></a>
 					</div>
 					<div class="4u -4u 5u(medium) -4u(medium) 9u(small) ">
 						<div id="rightnav">
-							<a href="/portfolio" id="navsblg" class="{%if activePage == 'portfolio' %} active {% endif %}">Portfolio</a>
-							<a href="/products" id="navsblg" class="{%if activePage == 'products' %} active {% endif %}">Products</a>
-							<a href="/lab" id="navsblg" class="{%if activePage == 'lab' %} active {% endif %}">Lab</a>
-							<a href="/contact" id="navsblg" class="{%if activePage == 'contact' %} active {% endif %}">About</a>
+							<a href="/external" id="navsblg" class="{%if activePage == 'external' %} active {% endif %}">external</a>
+							<a href="/internal" id="navsblg" class="{%if activePage == 'internal' %} active {% endif %}">internal</a>
+							<a href="/nocturnal" id="navsblg" class="{%if activePage == 'nocturnal' %} active {% endif %}">nocturnal</a>
+							<a href="/contact" id="navsblg" class="{%if activePage == 'contact' %} active {% endif %}">about</a>
 							<a href="#nav" id="navsb"></a>
 						</div>
 					</div>
@@ -24,10 +24,10 @@
 				<div class="logo"></div>
 				<hr class="major" />
 				<ul class="links">
-					<li><a href="/portfolio">Portfolio</a></li>
-					<li><a href="/products">Products</a></li>
-					<li><a href="/lab">Lab</a></li>
-					<li><a href="/contact">About</a></li>
+					<li><a href="/external">external</a></li>
+					<li><a href="/internal">internal</a></li>
+					<li><a href="/nocternal">nocturnal</a></li>
+					<li><a href="/contact">about</a></li>
 				</ul>
 				<hr class="major" />
 				<div class="row double">
@@ -46,12 +46,11 @@
 			</nav>
 
 				<div class="row">
-						<section class="6u 12u(medium) 12$(small)">
-
+						<section class="7u 12u(medium) 12$(small)">
 							<p>{{bannercopy}}</p>
 						</section>
 
-						<section class="-3u 3u$ 3u$(large) -3u(large) 12u$(medium) 12u$(small) socialmediaicons" >
+						<section class="-2u 3u$ 3u$(large) -2u(large) 12u$(medium) 12u$(small) socialmediaicons" >
 							<ul class="icons">
 											<li><a href="https://twitter.com/superbright_me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="https://www.facebook.com/Superbrightme-685676934818450/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>

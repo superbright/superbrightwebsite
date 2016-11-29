@@ -4,7 +4,7 @@
 {% block content %}
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/banner.nunjucks' as nav %}
-{{nav.active('products',bannercopy)}}
+{{nav.active('internal',bannercopy)}}
 
 		<!-- Main -->
 			<div id="main" class="container">
@@ -18,20 +18,20 @@
 						<section class="9u 12u$(medium)">
 							<div class="box alt">
 									<div class="row 50% uniform">
-										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><a href="/products/{{project.slug}}"> <img src="{{project.images[0].guid}}" alt="" /></a></span></div>
+										<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><a href="/internal/{{project.slug}}"> <img src="{{project.images[0].guid}}" alt="" /></a></span></div>
 									</div>
 								</div>
 						</section>
 
 						<section class="3u$ 6u$(medium) 12u$(small)">
-							<h3 class="title"><a href="/products/{{project.slug}}">{{project.title.rendered}}</a></h3>
+							<h3 class="title"><a href="/internal/{{project.slug}}">{{project.title.rendered}}</a></h3>
 							<ul class="actions small">
 									{% for tag in project.tags %}
 									<li><a href="/tags/{{tag.slug}}" class="button small buttoninlinetag">{{tag.name}}</a></li>
 									{% endfor %}
 								</ul>
 							<p>{{project.short_description}}</p>
-							<p><a href="/products/{{project.slug}}"> Read more -> </a></p>
+							<p><a href="/internal/{{project.slug}}"> Read more -> </a></p>
 						</section>
 					</div>
 

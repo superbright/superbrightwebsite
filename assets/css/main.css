@@ -1888,12 +1888,17 @@ body {
     visibility: visible; }
     #header #navsblg .active {
       color: #69F7EB; }
+  #header .active .logo {
+    background-image: url("/images/mobile/Logo-01_hover.svg"); }
   #header .logo {
     background-image: url("/images/mobile/Logo-01.svg");
-    width: 250px;
-    height: 20px;
+    width: 300px;
+    height: 30px;
+    background-size: 300px 30px;
     background-repeat: no-repeat;
     margin-top: 15px; }
+    #header .logo:hover {
+      background-image: url("/images/mobile/Logo-01_hover.svg"); }
   #header > h1 {
     color: #ffffff;
     display: inline-block;

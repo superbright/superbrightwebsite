@@ -53,10 +53,10 @@
 
 				{% for person in data.people %}
 					<hr class="major" />
-					<div class="row homerollover">
+					<div class="row homerollover" onmouseover="this.getElementsByClassName('profile')[0].src='{{person.bio_photo_overlay.guid}}'" onmouseout="this.getElementsByClassName('profile')[0].src='{{person.biophoto.guid}}'">
 							<section class="6u 12u$(medium)">
 								<div class="box alt">
-											<span class="image fit"><img src="{{person.biophoto.guid}}" alt="{{person.post_title}}" /></span>
+											<span class="image fit"><img class="profile" src="{{person.biophoto.guid}}"  alt="{{person.post_title}}" /></span>
 									</div>
 							</section>
 							<section class="6u$ 6u$(medium) 12u$(small)">

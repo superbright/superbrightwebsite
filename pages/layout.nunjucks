@@ -19,22 +19,22 @@
 				<div class="container">
 					<div class="row double">
 						<div class="3u 12u$(medium)">
-							
-							<p>195 Morgan Ave #406<br>Brooklyn Ny 11206<br>646 6969286<br>igal@superbright.me</p>
+
+							<p>361 Stagg st #406<br>Brooklyn NY, 11206<br>hello@superbright.me</p>
 							<ul class="icons">
 											<li><a href="https://twitter.com/superbright_me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="https://www.facebook.com/Superbrightme-685676934818450/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 											<li><a href="https://www.instagram.com/superbrightme/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 											<li><a href="https://github.com/superbright" class="icon fa-github"><span class="label">Github</span></a></li>
-										
+
 							</ul>
 						</div>
 						<div class="1u -8u 12u$(medium)" id="backtotop">
-						Back to top 
+						Back to top
 						</div>
 					</div>
 				</div>
-				
+
 			</footer>
 
 		<!-- Scripts -->

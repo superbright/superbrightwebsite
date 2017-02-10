@@ -141,7 +141,7 @@ app.get('/', function(req, res) {
     }
 
     res.render('home.html', {
-      bannercopy : bannercopyhome,
+      bannercopy : response.body[0].content.rendered,
       title : 'Superbright',
       projects: projectslist
     });
@@ -156,7 +156,7 @@ app.get('/external', function(req, res) {
     projectslist = projectslist.concat(response.body);
     res.render('portfolio.html', {
       projects : projectslist,
-      bannercopy : bannercopyext,
+      bannercopy : response.body[0].content.rendered,
     });
   });
 });
@@ -198,7 +198,7 @@ app.get('/internal', function(req, res) {
     projectslist = projectslist.concat(response.body);
     res.render('products.html', {
       projects : projectslist,
-      bannercopy : bannercopyint
+      bannercopy : response.body[0].content.rendered
     });
   });
 });
@@ -212,7 +212,7 @@ app.get('/nocturnal', function(req, res) {
 
     res.render('lab.html', {
       projects : projectslist,
-      bannercopy : bannercopynoc
+      bannercopy : response.body[0].content.rendered
     });
   });
 });

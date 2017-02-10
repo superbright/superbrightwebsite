@@ -5,7 +5,7 @@
 			<header id="header">
 				<div class="row">
 					<div class="3u 0u(medium)">
-						<a href="/" class="{%if activePage == 'home' %}active{% endif %}"><div class="logo"></div></a>
+						<a href="/" class="{%if activePage == 'home_bak' %}active{% endif %}"><div class="logo"></div></a>
 					</div>
 					<div class="4u -4u 5u(medium) -4u(medium) 9u(small) ">
 						<div id="rightnav">

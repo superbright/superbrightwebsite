@@ -16,7 +16,7 @@
 
 
 			<div class="row">
-					{% if project.header.type == 'image' %}
+					{% if  project.videourl == ''%}
 					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="{{project.images[0].guid}}" alt="" /></span></div>
 					{% else %}
 					<div class="12u 12u$(large) 12u$(small)"><figure>

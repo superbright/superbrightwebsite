@@ -122,9 +122,16 @@ app.get('/', function(req, res) {
     for (var a in obj) return a;
   }
 
+
+
   unirest.get(url + '/sb_home')
   .type('json')
   .end(function (response) {
+
+    var meta = {};
+    meta.title = response.body[0].meta_title;
+    meta.description = response.body[0].meta_description;
+    meta.image = response.body[0].meta_image.guid;
 
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body[0].projects);
@@ -143,7 +150,8 @@ app.get('/', function(req, res) {
     res.render('home.html', {
       bannercopy : response.body[0].content.rendered,
       title : 'Superbright',
-      projects: projectslist
+      projects: projectslist,
+      meta : meta
     });
   });
 });
@@ -166,11 +174,16 @@ app.get('/external/:name', function(req, res) {
   unirest.get(url + '/sb_projects?filter[name]=' + req.params.name)
   .type('json')
   .end(function (response) {
-    console.log(response.body[0]);
+    var meta = {};
+    meta.title = response.body[0].title.rendered;
+    meta.description = response.body[0].short_description;
+    meta.image = response.body[0].images[0].guid;
+
     res.render('portfoliodetail.html', {
       title : 'Superbright',
       bannercopy : "",
-      project : response.body[0]
+      project : response.body[0],
+      meta:meta
     });
   });
 });
@@ -180,11 +193,16 @@ app.get('/internal/:name', function(req, res) {
   unirest.get(url + '/sb_products?filter[name]=' + req.params.name)
   .type('json')
   .end(function (response) {
-    //res.send(response.body[0]);
+    var meta = {};
+    meta.title = response.body[0].title.rendered;
+    meta.description = response.body[0].short_description;
+    meta.image = response.body[0].images[0].guid;
+
     res.render('productdetail.html', {
       title : 'Superbright',
       bannercopy : '',
-      project : response.body[0]
+      project : response.body[0],
+      meta:meta
     });
   });
 });
@@ -221,6 +239,12 @@ app.get('/nocturnal/:name', function(req, res) {
     unirest.get(url + '/sb_lab?filter[name]=' + req.params.name)
     .type('json')
     .end(function (response) {
+
+      var meta = {};
+      meta.title = response.body[0].title.rendered;
+      meta.description = response.body[0].short_description;
+      meta.image = response.body[0].images[0].guid;
+
       var projectslist = new Array();
       projectslist = projectslist.concat(response.body[0].lab_entry);
       //sort lab response.body[0]
@@ -235,7 +259,8 @@ app.get('/nocturnal/:name', function(req, res) {
       res.render('labdetail.html', {
         title : 'Superbright',
         bannercopy : '',
-        project : response.body[0]
+        project : response.body[0],
+        meta: meta
       });
     });
 });

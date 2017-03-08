@@ -1,4 +1,10 @@
 {% extends "layout.nunjucks" %}
+{% block header %}
+<meta property="og:title" content="{{meta.title}}"/>
+<meta property="og:image" content="{{meta.image}}"/>
+<meta property="og:site_name" content="Superbright New York"/>
+<meta property="og:description" content="{{meta.description}}"/>
+{% endblock %}
 
 {% block content %}
 

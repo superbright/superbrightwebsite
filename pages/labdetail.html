@@ -1,5 +1,10 @@
 {% extends "layout.nunjucks" %}
-
+{% block header %}
+<meta property="og:title" content="{{meta.title}}"/>
+<meta property="og:image" content="{{meta.image}}"/>
+<meta property="og:site_name" content="Superbright New York"/>
+<meta property="og:description" content="{{meta.description}}"/>
+{% endblock %}
 
 {% block content %}
 <!-- Importing Nunjucks Macro -->
@@ -73,7 +78,7 @@
 								<div class="6u -6u 12u$(small)"><span class="image fit"><img src="{{step.images[0].guid}}" alt="" /></span></div>
 
 						</div>
-          {% elseif step.images.length > 1 %}
+          {% elif step.images.length > 1 %}
               <hr class="major" />
               <div class="row">
                   <div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[0].guid}}" alt="" /></span></div>

@@ -132,6 +132,7 @@ app.get('/', function(req, res) {
     meta.title = response.body[0].meta_title;
     meta.description = response.body[0].meta_description;
     meta.image = response.body[0].meta_image.guid;
+    meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
     var projectslist = new Array();
     projectslist = projectslist.concat(response.body[0].projects);
@@ -177,7 +178,9 @@ app.get('/external/:name', function(req, res) {
     var meta = {};
     meta.title = response.body[0].title.rendered;
     meta.description = response.body[0].short_description;
-    meta.image = response.body[0].images[0].guid;
+    meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
+    meta.image1 = response.body[0].images[0].guid;
+    meta.image2 = response.body[0].images[1].guid;
 
     res.render('portfoliodetail.html', {
       title : 'Superbright',
@@ -196,7 +199,9 @@ app.get('/internal/:name', function(req, res) {
     var meta = {};
     meta.title = response.body[0].title.rendered;
     meta.description = response.body[0].short_description;
-    meta.image = response.body[0].images[0].guid;
+    meta.image1 = response.body[0].images[0].guid;
+    meta.image2 = response.body[0].images[1].guid;
+    meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
     res.render('productdetail.html', {
       title : 'Superbright',
@@ -243,7 +248,9 @@ app.get('/nocturnal/:name', function(req, res) {
       var meta = {};
       meta.title = response.body[0].title.rendered;
       meta.description = response.body[0].short_description;
-      meta.image = response.body[0].images[0].guid;
+      meta.image1 = response.body[0].images[0].guid;
+      meta.image2 = response.body[0].images[1].guid;
+      meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
       var projectslist = new Array();
       projectslist = projectslist.concat(response.body[0].lab_entry);

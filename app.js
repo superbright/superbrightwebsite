@@ -229,6 +229,7 @@ app.get('/nocturnal/:name', function(req, res) {
         // to get a value that is either negative, positive, or zero.
         return new Date(a.post_date) - new Date(b.post_date);
       });
+
       response.body[0].lab_entry = projectslist;
       //res.send(response.body[0]);
       res.render('labdetail.html', {

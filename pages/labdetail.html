@@ -43,14 +43,14 @@
 
 
 			<div class="row">
-					{% if project.header.type == 'image' %}
-					<div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="/images/projects/{{project.slug}}/{{project.images[0]}}" alt="" /></span></div>
-					{% else %}
-          <div class="12u 12u$(large) 12u$(small)"><figure>
-						<iframe src="http://player.vimeo.com/video/{{project.videourl}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
-						</figure>
-					</div>
-					{% endif %}
+        {% if  project.videourl == ''%}
+        <div class="12u 12u$(large) 12u$(small)"><span class="image fit"><img src="{{project.images[2].guid}}" alt="" /></span></div>
+        {% else %}
+        <div class="12u 12u$(large) 12u$(small)"><figure>
+          <iframe src="http://player.vimeo.com/video/{{project.videourl}}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
+          </figure>
+        </div>
+        {% endif %}
 			</div>
 
 
@@ -59,7 +59,7 @@
 						<hr class="major" />
 							<div class="row homerollover" id="url">
 								<section class="6u 6u(medium) 12u$(small)">
-									<h3>{{step.post_title}}</h3>
+									<h3>{{step.entry_title}}</h3>
 
 								</section>
 								<section class="6u$ 6u$(medium) 12u$(small)">
@@ -67,12 +67,18 @@
 									<p id="url">{{step.post_content|safe}}</p>
 								</section>
 							</div>
-					{% if step.images.length > 0 %}
+					{% if step.images.length == 1 %}
           	<hr class="major" />
 						<div class="row">
-								<div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[0].guid}}" alt="" /></span></div>
-								<div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[1].guid}}" alt="" /></span></div>
+								<div class="6u -6u 12u$(small)"><span class="image fit"><img src="{{step.images[0].guid}}" alt="" /></span></div>
+
 						</div>
+          {% elseif step.images.length > 1 %}
+              <hr class="major" />
+              <div class="row">
+                  <div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[0].guid}}" alt="" /></span></div>
+                  <div class="6u  12u$(small)"><span class="image fit"><img src="{{step.images[1].guid}}" alt="" /></span></div>
+              </div>
 
 					{% endif %}
 

@@ -131,7 +131,9 @@ app.get('/', function(req, res) {
     var meta = {};
     meta.title = response.body[0].meta_title;
     meta.description = response.body[0].meta_description;
-    meta.image = response.body[0].meta_image.guid;
+    if(response.body[0].meta_image != null) {
+      meta.image = response.body[0].meta_image.guid;
+    }
     meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
     var projectslist = new Array();

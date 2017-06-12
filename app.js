@@ -143,7 +143,13 @@ app.get('/', function(req, res) {
     });
 
     for(var i = 0; i < projectslist.length; i++) {
-        var arr = Object.keys(projectslist[i].tags).map(function (key) { return projectslist[i].tags[key]; });
+        if(projectslist[i] == null) {
+          continue;
+        }
+        var arr = Object.keys(projectslist[i].tags).map(function (key)
+        {
+          return projectslist[i].tags[key];
+        });
         projectslist[i].tags = arr;
         projectslist[i].type = projectslist[i].project_type[first(projectslist[i].project_type)].name;
     }

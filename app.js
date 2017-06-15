@@ -118,11 +118,14 @@ app.post('/tags', function(req, res) {
 });
 
 app.get('/', function(req, res) {
+      res.render('construction.html', {
+      });
+});
+
+app.get('/bak', function(req, res) {
   function first(obj) {
     for (var a in obj) return a;
   }
-
-
 
   unirest.get(url + '/sb_home')
   .type('json')
@@ -254,6 +257,10 @@ app.get('/nocturnal/:name', function(req, res) {
     .end(function (response) {
 
       var meta = {};
+      if(response.body[0].title == null) {
+        return;
+      }
+
       meta.title = response.body[0].title.rendered;
       meta.description = response.body[0].short_description;
       meta.image1 = response.body[0].images[0].guid;

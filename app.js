@@ -5,7 +5,7 @@ var app       = express();
 var basicAuth = require('basic-auth');
 var unirest = require('unirest');
 
-var url = "http://162.243.67.91/wp-json/wp/v2";
+var url = "http://138.197.105.87/wp-json/wp/v2";
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -21,18 +21,6 @@ app.use(express.static('assets'));
  var bannercopyext = "These are things we’ve built with brands.";
  var bannercopynoc = "These are quick projects we’ve done in the name of experimentation: focus groups, quick hacks, prototypes, and research that’s of value to the community."
 
-// Authenticator
-// app.use(function(req, res, next) {
-//     var user = basicAuth(req);
-//
-//     if (user === undefined || user['name'] !== 'superbright' || user['pass'] !== 'partytime') {
-//         res.statusCode = 401;
-//         res.setHeader('WWW-Authenticate', 'Basic realm="MyRealmName"');
-//         res.end('Unauthorized');
-//     } else {
-//         next();
-//     }
-// });
 
 nunjucks.configure(['/pages','pages'], {
   autoescape: true,
@@ -56,7 +44,80 @@ app.get('/test', function(req, res) {
     });
 });
 
+
 app.get('/tags/:tag', function(req, res) {
+
+  var tagslug = req.params.tag;
+  var currenttag;
+  var results = new Array();
+  unirest.get(url + '/sb_tags?per_page=100')
+  .type('json')
+  .end(function (response) {
+    var taglist = response.body;
+
+    unirest.get(url + '/sb_search')
+        .type('json')
+        .end(function (response) {
+
+      // var meta = {};
+      // meta.title = response.body[0].meta_title;
+      // meta.description = response.body[0].meta_description;
+      // if(response.body[0].meta_image != null) {
+      //   meta.image = response.body[0].meta_image.guid;
+      // }
+      // meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
+
+      var projectslist = new Array();
+
+      for(var k = 0; k < response.body[0].projects.length; k++) {
+             var obj = response.body[0].projects[k].tags;
+             var arr = Object.keys(obj).filter(function (key) {
+               return obj[key].slug === tagslug;
+             });
+             console.log(arr.length);
+             if(arr.length > 0) projectslist.push(response.body[0].projects[k]);
+      }
+
+      // if(response.body[0].products[0] != "") {
+      //     projectslist = projectslist.concat(response.body[0].products);
+      // }
+      // if(response.body[0].labs[0] != "") {
+      //   projectslist = projectslist.concat(response.body[0].labs);
+      // }
+
+      //sort
+      projectslist = projectslist.sort(function(a,b){
+        return new Date(b.post_date) - new Date(a.post_date);
+      });
+
+      for(var i = 0; i < projectslist.length; i++) {
+          if(projectslist[i] == null) {
+            continue;
+          }
+          var arr = Object.keys(projectslist[i].tags).map(function (key)
+          {
+            return projectslist[i].tags[key];
+          });
+          projectslist[i].tags = arr;
+        //  projectslist[i].type = projectslist[i].project_type[first(projectslist[i].project_type)].name;
+      }
+      for(var k = 0; k < taglist.length; k++) {
+          if(taglist[k].slug == tagslug) {
+            //set currenttag
+            currenttag = taglist[k];
+          }
+      }
+      res.render('tags.html', {
+                      bannercopy : currenttag.description,
+                      projects : projectslist,
+                      selectedtag: currenttag,
+                      tags: taglist
+                    });
+    });
+  });
+});
+
+app.get('/tagsback/:tag', function(req, res) {
 
   var tagslug = req.params.tag;
   var currenttag;
@@ -117,12 +178,12 @@ app.post('/tags', function(req, res) {
   });
 });
 
-app.get('/', function(req, res) {
+app.get('/construction', function(req, res) {
       res.render('construction.html', {
       });
 });
 
-app.get('/bak', function(req, res) {
+app.get('/', function(req, res) {
   function first(obj) {
     for (var a in obj) return a;
   }
@@ -140,9 +201,14 @@ app.get('/bak', function(req, res) {
     meta.url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
     var projectslist = new Array();
+
     projectslist = projectslist.concat(response.body[0].projects);
-    projectslist = projectslist.concat(response.body[0].products);
-    projectslist = projectslist.concat(response.body[0].labs);
+    if(response.body[0].products[0] != "") {
+        projectslist = projectslist.concat(response.body[0].products);
+    }
+    if(response.body[0].labs[0] != "") {
+      projectslist = projectslist.concat(response.body[0].labs);
+    }
     projectslist = projectslist.sort(function(a,b){
       return new Date(b.post_date) - new Date(a.post_date);
     });
@@ -183,9 +249,12 @@ app.get('/external', function(req, res) {
 
 app.get('/external/:name', function(req, res) {
 
+  console.log(req.params.name);
+
   unirest.get(url + '/sb_projects?filter[name]=' + req.params.name)
   .type('json')
   .end(function (response) {
+  //  console.log(response);
     var meta = {};
     meta.title = response.body[0].title.rendered;
     meta.description = response.body[0].short_description;
@@ -293,7 +362,6 @@ app.get('/contact', function(req, res) {
   unirest.get(url + '/sb_contact')
   .type('json')
   .end(function (response) {
-    console.log(response.body);
     //var projectdata = projectslist.concat(response.body);
     res.render('contact.html', {
       bannercopy : '',

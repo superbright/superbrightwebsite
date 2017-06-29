@@ -91,6 +91,7 @@ app.get('/tags/:tag', function(req, res) {
       });
 
       for(var i = 0; i < projectslist.length; i++) {
+
           if(projectslist[i] == null) {
             continue;
           }
@@ -99,14 +100,18 @@ app.get('/tags/:tag', function(req, res) {
             return projectslist[i].tags[key];
           });
           projectslist[i].tags = arr;
-        //  projectslist[i].type = projectslist[i].project_type[first(projectslist[i].project_type)].name;
+          var key = Object.keys(projectslist[i].project_type)[0];
+          console.log(projectslist[i].project_type[key]);
+          projectslist[i].type = projectslist[i].project_type[key].name;
       }
+
       for(var k = 0; k < taglist.length; k++) {
           if(taglist[k].slug == tagslug) {
             //set currenttag
             currenttag = taglist[k];
           }
       }
+    //  res.send(projectslist);
       res.render('tags.html', {
                       bannercopy : currenttag.description,
                       projects : projectslist,
